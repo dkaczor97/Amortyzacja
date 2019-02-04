@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Forms;
 using Amortyzacja.Presenter;
 using Amortyzacja.View;
 
@@ -19,10 +20,7 @@ namespace Amortyzacja
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
-            LoginPresenter loginPresenter=new LoginPresenter(this);
-        }
+      
 
         public string Login
         {
@@ -34,6 +32,11 @@ namespace Amortyzacja
         {
             get => PasswordBox.Text;
             set => PasswordBox.Text = value;
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

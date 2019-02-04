@@ -28,12 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.addHardware = new System.Windows.Forms.Button();
+            this.addSoftware = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.registerHardware = new System.Windows.Forms.Button();
+            this.registerSoftware = new System.Windows.Forms.Button();
+            this.freeHardware = new System.Windows.Forms.Button();
+            this.freeSoftware = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // addHardware
+            // 
+            this.addHardware.Location = new System.Drawing.Point(3, 3);
+            this.addHardware.Name = "addHardware";
+            this.addHardware.Size = new System.Drawing.Size(254, 40);
+            this.addHardware.TabIndex = 0;
+            this.addHardware.Text = "DODAJ SPRZĘT";
+            this.addHardware.UseVisualStyleBackColor = true;
+            this.addHardware.Click += new System.EventHandler(this.addHardware_Click);
+            // 
+            // addSoftware
+            // 
+            this.addSoftware.Location = new System.Drawing.Point(3, 49);
+            this.addSoftware.Name = "addSoftware";
+            this.addSoftware.Size = new System.Drawing.Size(254, 40);
+            this.addSoftware.TabIndex = 1;
+            this.addSoftware.Text = "DODAJ OPROGRAMOWANIE";
+            this.addSoftware.UseVisualStyleBackColor = true;
+            this.addSoftware.Click += new System.EventHandler(this.addSoftware_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.addHardware);
+            this.flowLayoutPanel1.Controls.Add(this.addSoftware);
+            this.flowLayoutPanel1.Controls.Add(this.registerHardware);
+            this.flowLayoutPanel1.Controls.Add(this.registerSoftware);
+            this.flowLayoutPanel1.Controls.Add(this.freeHardware);
+            this.flowLayoutPanel1.Controls.Add(this.freeSoftware);
+            this.flowLayoutPanel1.Controls.Add(this.logoutButton);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(304, 43);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(258, 353);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // registerHardware
+            // 
+            this.registerHardware.Location = new System.Drawing.Point(3, 95);
+            this.registerHardware.Name = "registerHardware";
+            this.registerHardware.Size = new System.Drawing.Size(254, 40);
+            this.registerHardware.TabIndex = 3;
+            this.registerHardware.Text = "REJESTRACJA SPRZĘTU";
+            this.registerHardware.UseVisualStyleBackColor = true;
+            this.registerHardware.Click += new System.EventHandler(this.registerHardware_Click);
+            // 
+            // registerSoftware
+            // 
+            this.registerSoftware.Location = new System.Drawing.Point(3, 141);
+            this.registerSoftware.Name = "registerSoftware";
+            this.registerSoftware.Size = new System.Drawing.Size(254, 40);
+            this.registerSoftware.TabIndex = 4;
+            this.registerSoftware.Text = "REJESTRACJA OPROGRAMOWANIA";
+            this.registerSoftware.UseVisualStyleBackColor = true;
+            this.registerSoftware.Click += new System.EventHandler(this.registerSoftware_Click);
+            // 
+            // freeHardware
+            // 
+            this.freeHardware.Location = new System.Drawing.Point(3, 187);
+            this.freeHardware.Name = "freeHardware";
+            this.freeHardware.Size = new System.Drawing.Size(254, 40);
+            this.freeHardware.TabIndex = 7;
+            this.freeHardware.Text = "WOLNY SPRZĘT";
+            this.freeHardware.UseVisualStyleBackColor = true;
+            this.freeHardware.Click += new System.EventHandler(this.freeHardware_Click);
+            // 
+            // freeSoftware
+            // 
+            this.freeSoftware.Location = new System.Drawing.Point(3, 233);
+            this.freeSoftware.Name = "freeSoftware";
+            this.freeSoftware.Size = new System.Drawing.Size(254, 40);
+            this.freeSoftware.TabIndex = 8;
+            this.freeSoftware.Text = "WOLNE OPROGRAMOWANIE";
+            this.freeSoftware.UseVisualStyleBackColor = true;
+            this.freeSoftware.Click += new System.EventHandler(this.freeSoftware_Click);
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(3, 279);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(254, 40);
+            this.logoutButton.TabIndex = 9;
+            this.logoutButton.Text = "WYLOGUJ";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // BuyerForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "BuyerForm";
             this.Text = "BuyerForm";
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button addHardware;
+        private System.Windows.Forms.Button addSoftware;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button registerHardware;
+        private System.Windows.Forms.Button registerSoftware;
+        private System.Windows.Forms.Button freeHardware;
+        private System.Windows.Forms.Button freeSoftware;
+        private System.Windows.Forms.Button logoutButton;
     }
 }

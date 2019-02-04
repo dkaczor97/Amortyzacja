@@ -16,5 +16,10 @@ namespace Amortyzacja.Forms
         {
             InitializeComponent();
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,40 @@ namespace Amortyzacja.Forms
         {
             InitializeComponent();
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addHardware_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addSoftware_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerHardware_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerSoftware_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void freeHardware_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void freeSoftware_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

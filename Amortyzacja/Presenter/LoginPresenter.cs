@@ -11,7 +11,7 @@ namespace Amortyzacja.Presenter
     class LoginPresenter
     {
         private ILoginView _loginView;
-        private IODatabaseEntities db =new IODatabaseEntities();
+        
         public LoginPresenter(ILoginView loginView)
         {
             _loginView = loginView;
@@ -19,7 +19,7 @@ namespace Amortyzacja.Presenter
 
         public bool LoginToApp(string login, string password)
         {
-            Workers worker=new Workers(){};
+            
 
             return true;
         }
