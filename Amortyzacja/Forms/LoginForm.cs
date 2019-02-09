@@ -36,7 +36,10 @@ namespace Amortyzacja
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-
+            
+            LoginPresenter loginPresenter=new LoginPresenter(this);
+            loginPresenter.LoginToApp(Login,Password);
+            
         }
     }
 }

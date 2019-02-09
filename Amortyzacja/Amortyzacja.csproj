@@ -55,7 +55,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Amortization.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDbContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="AppSession.cs" />
+    <Compile Include="Employment.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AccountantForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +110,12 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hardware.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="License.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\AccountantPresenter.cs" />
     <Compile Include="Presenter\AdminPresenter.cs" />
     <Compile Include="Presenter\BuyerPresenter.cs" />
@@ -93,11 +123,26 @@
     <Compile Include="Presenter\WorkerPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Software.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subscription.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\IAccountantView.cs" />
     <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IBuyerView.cs" />
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IWorkerView.cs" />
+    <Compile Include="Worker.cs">
+      <DependentUpon>AppDbContext.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AccountantForm.resx">
       <DependentUpon>AccountantForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +167,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="AppDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AppDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AppDbContext.edmx.diagram">
+      <DependentUpon>AppDbContext.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -139,6 +191,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AppDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppDbContext.edmx</DependentUpon>
+      <LastGenOutput>AppDbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AppDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppDbContext.edmx</DependentUpon>
+      <LastGenOutput>AppDbContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.View;
 
 namespace Amortyzacja.Forms
 {
-    public partial class AdminForm : Form
+    public partial class AdminForm : Form,IAdminView
     {
         public AdminForm()
         {

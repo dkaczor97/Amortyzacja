@@ -4,6 +4,8 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Amortyzacja.Forms;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
@@ -17,11 +19,55 @@ namespace Amortyzacja.Presenter
             _loginView = loginView;
         }
 
-        public bool LoginToApp(string login, string password)
+        public void LoginToApp(string login, string password)
         {
+            //Account account=new Account(){UserLogin = login,UserPassword = password};
+            IODatabaseEntities db=new IODatabaseEntities();
+            var result = db.Accounts.FirstOrDefault(account => account.UserLogin == login&&account.UserPassword==password);
+            if (result != null)
+            {
+                Worker worker = result.Worker;
+                AppSession.GetInstance().CurrentWorker = worker;
+                LoginForm loginForm = _loginView as LoginForm;
+                if (result.Permission == 0)
+                {
+                    WorkerForm workerForm=new WorkerForm();
+                    workerForm.Show();
+                    
+                    loginForm.Hide();
+                }
+                else if (result.Permission==1)
+                {
+                    BuyerForm buyerForm=new BuyerForm();
+                    buyerForm.Show();
+                    loginForm.Hide();
+
+                }
+                else if (result.Permission == 2)
+                {
+                    AccountantForm accountantForm=new AccountantForm();
+                    accountantForm.Show();
+                    loginForm.Hide();
+                }
+                else if (result.Permission == 3)
+                {
+                    AdminForm adminForm=new AdminForm();
+                    loginForm.Hide();
+                    adminForm.Show();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("NIEPOPRAWNY LOGIN LUB HASLO");
+            }
+            
+           
+            
             
 
-            return true;
+
+
         }
     }
 }

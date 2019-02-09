@@ -16,5 +16,16 @@ namespace Amortyzacja
                 _appSession=new AppSession();
             return _appSession;
         }
+
+        private Worker _worker = null;
+
+        public Worker CurrentWorker
+        {
+            get => _worker;
+            set => _worker = value;
+        }
+
+
+
     }
 }

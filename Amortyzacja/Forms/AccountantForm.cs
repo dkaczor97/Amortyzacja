@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.View;
 
 namespace Amortyzacja
 {
-    public partial class AccountantForm : Form
+    public partial class AccountantForm : Form,IAccountantView
     {
         public AccountantForm()
         {
