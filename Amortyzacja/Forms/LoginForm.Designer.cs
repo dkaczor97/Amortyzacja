@@ -37,7 +37,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(366, 247);
+            this.loginButton.Location = new System.Drawing.Point(369, 250);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(123, 46);
             this.loginButton.TabIndex = 0;
@@ -49,6 +49,7 @@
             // 
             this.PasswordBox.Location = new System.Drawing.Point(325, 178);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(215, 22);
             this.PasswordBox.TabIndex = 1;
             // 

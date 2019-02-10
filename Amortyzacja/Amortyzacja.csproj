@@ -92,6 +92,12 @@
     <Compile Include="Forms\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AssetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssetsForm.Designer.cs">
+      <DependentUpon>AssetsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BuyerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +122,11 @@
     <Compile Include="License.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Presenter\AccountantPresenter.cs" />
-    <Compile Include="Presenter\AdminPresenter.cs" />
-    <Compile Include="Presenter\BuyerPresenter.cs" />
-    <Compile Include="Presenter\LoginPresenter.cs" />
-    <Compile Include="Presenter\WorkerPresenter.cs" />
+    <Compile Include="Presenters\AccountantPresenter.cs" />
+    <Compile Include="Presenters\AdminPresenter.cs" />
+    <Compile Include="Presenters\BuyerPresenter.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchase.cs">
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssetsForm.resx">
+      <DependentUpon>AssetsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BuyerForm.resx">
       <DependentUpon>BuyerForm.cs</DependentUpon>

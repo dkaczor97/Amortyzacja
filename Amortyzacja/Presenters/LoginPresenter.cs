@@ -10,13 +10,14 @@ using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
 {
-    class LoginPresenter
+    public class LoginPresenter
     {
         private ILoginView _loginView;
         
         public LoginPresenter(ILoginView loginView)
         {
             _loginView = loginView;
+            _loginView.Presenter = this;
         }
 
         public void LoginToApp(string login, string password)
@@ -61,13 +62,6 @@ namespace Amortyzacja.Presenter
             {
                 MessageBox.Show("NIEPOPRAWNY LOGIN LUB HASLO");
             }
-            
-           
-            
-            
-
-
-
         }
     }
 }

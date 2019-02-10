@@ -34,12 +34,11 @@ namespace Amortyzacja
             set => PasswordBox.Text = value;
         }
 
+        public LoginPresenter Presenter { set; get; }
+
         private void loginButton_Click(object sender, EventArgs e)
         {
-            
-            LoginPresenter loginPresenter=new LoginPresenter(this);
-            loginPresenter.LoginToApp(Login,Password);
-            
+            Presenter.LoginToApp(Login,Password);
         }
     }
 }

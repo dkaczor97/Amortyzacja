@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Presenter;
 
 namespace Amortyzacja
 {
@@ -16,7 +17,9 @@ namespace Amortyzacja
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            var loginForm=new LoginForm();
+            var presenter = new LoginPresenter(loginForm);
+            Application.Run(loginForm);
         }
     }
 }
