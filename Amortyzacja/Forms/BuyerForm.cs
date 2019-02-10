@@ -58,5 +58,7 @@ namespace Amortyzacja.Forms
         {
 
         }
+
+        public BuyerPresenter Presenter { get; set; }
     }
 }

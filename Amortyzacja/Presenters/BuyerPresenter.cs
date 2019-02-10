@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Amortyzacja.Presenter
 {
-    class BuyerPresenter
+    public class BuyerPresenter
     {
         public void AddSoftware()
         {

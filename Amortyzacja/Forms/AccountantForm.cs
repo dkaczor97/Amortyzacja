@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Presenter;
 using Amortyzacja.View;
 
 namespace Amortyzacja
@@ -18,11 +19,14 @@ namespace Amortyzacja
             InitializeComponent();
         }
 
+
      
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
 
         }
+
+        public AccountantPresenter Presenter { get; set; }
     }
 }

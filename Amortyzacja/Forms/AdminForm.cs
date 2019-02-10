@@ -14,6 +14,8 @@ namespace Amortyzacja.Forms
 {
     public partial class AdminForm : Form,IAdminView
     {
+        public AdminPresenter Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public AdminForm()
         {
             InitializeComponent();

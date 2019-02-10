@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Presenters;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Forms
@@ -22,5 +23,7 @@ namespace Amortyzacja.Forms
         {
 
         }
+
+        public WorkerPresenter Presenter { get; set; }
     }
 }

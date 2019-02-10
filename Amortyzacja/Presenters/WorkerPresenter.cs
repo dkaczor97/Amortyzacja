@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Amortyzacja.Presenters
 {
-    class WorkerPresenter
+    public class WorkerPresenter
     {
     }
 }

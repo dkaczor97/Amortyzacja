@@ -7,7 +7,7 @@ using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
 {
-    class AdminPresenter
+    public class AdminPresenter
     {
         private IAdminView _adminView;
 
