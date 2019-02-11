@@ -86,6 +86,12 @@
     <Compile Include="Forms\AccountantForm.Designer.cs">
       <DependentUpon>AccountantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddWorkerForm.Designer.cs">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,7 @@
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Presenters\AccountantPresenter.cs" />
+    <Compile Include="Presenters\AddWorkerPresenter.cs" />
     <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\BuyerPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
@@ -142,6 +149,7 @@
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="View\IAccountantView.cs" />
+    <Compile Include="View\IAddWorkerView.cs" />
     <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IBuyerView.cs" />
     <Compile Include="View\ILoginView.cs" />

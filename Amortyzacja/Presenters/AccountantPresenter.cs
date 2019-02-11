@@ -13,7 +13,51 @@ namespace Amortyzacja.Presenter
         public AccountantPresenter(IAccountantView accountantView)
         {
             _accountantView = accountantView;
+            _accountantView.Presenter = this;
 
+        }
+
+        public void AddWorker()
+        {
+
+
+        }
+
+        public void DeleteWorker()
+        {
+
+        }
+
+        public void DeleteSoftware()
+        {
+
+        }
+
+        public void DeleteHardware()
+        {
+
+        }
+
+        public void Amortization()
+        {
+
+        }
+
+        public void RegisterSoftware()
+        {
+
+        }
+
+        public void RegisterHardware()
+        {
+
+        }
+        public void Logout()
+        {
+            LoginForm loginForm=new LoginForm();
+            LoginPresenter loginPresenter=new LoginPresenter(loginForm);
+            (_accountantView as AccountantForm).Hide();
+            loginForm.Show();
         }
     }
 }

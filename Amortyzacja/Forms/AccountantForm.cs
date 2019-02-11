@@ -19,14 +19,50 @@ namespace Amortyzacja
             InitializeComponent();
         }
 
+        public AccountantPresenter Presenter { get; set; }
 
-     
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-
+            Presenter.Logout();
         }
 
-        public AccountantPresenter Presenter { get; set; }
+
+        private void addWorker_Click(object sender, EventArgs e)
+        {
+            Presenter.AddWorker();
+        }
+
+        private void deleteWorker_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteWorker();
+        }
+
+        private void deleteHardware_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteHardware();
+        }
+
+        private void deleteSoftware_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteSoftware();
+        }
+
+        private void amortization_Click(object sender, EventArgs e)
+        {
+            Presenter.Amortization();
+        }
+
+        private void registerHardware_Click(object sender, EventArgs e)
+        {
+            Presenter.RegisterHardware();
+        }
+
+        private void registerSoftware_Click(object sender, EventArgs e)
+        {
+            Presenter.RegisterSoftware();
+        }
+
+       
     }
 }

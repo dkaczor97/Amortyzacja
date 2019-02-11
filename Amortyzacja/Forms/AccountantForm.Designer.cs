@@ -48,7 +48,7 @@
             this.addWorker.TabIndex = 0;
             this.addWorker.Text = "DODAJ PRACOWNIKA";
             this.addWorker.UseVisualStyleBackColor = true;
-        
+            this.addWorker.Click += new System.EventHandler(this.addWorker_Click);
             // 
             // deleteWorker
             // 
@@ -58,7 +58,7 @@
             this.deleteWorker.TabIndex = 1;
             this.deleteWorker.Text = "USUŃ PRACOWNIKA";
             this.deleteWorker.UseVisualStyleBackColor = true;
-            
+            this.deleteWorker.Click += new System.EventHandler(this.deleteWorker_Click);
             // 
             // deleteHardware
             // 
@@ -68,7 +68,7 @@
             this.deleteHardware.TabIndex = 2;
             this.deleteHardware.Text = "USUŃ SPRZĘT";
             this.deleteHardware.UseVisualStyleBackColor = true;
-            
+            this.deleteHardware.Click += new System.EventHandler(this.deleteHardware_Click);
             // 
             // deleteSoftware
             // 
@@ -78,7 +78,7 @@
             this.deleteSoftware.TabIndex = 3;
             this.deleteSoftware.Text = "USUŃ OPROGRAMOWANIE";
             this.deleteSoftware.UseVisualStyleBackColor = true;
-            
+            this.deleteSoftware.Click += new System.EventHandler(this.deleteSoftware_Click);
             // 
             // amortization
             // 
@@ -88,7 +88,7 @@
             this.amortization.TabIndex = 4;
             this.amortization.Text = "WYSOKOŚĆ AMORTYZACJI";
             this.amortization.UseVisualStyleBackColor = true;
-            
+            this.amortization.Click += new System.EventHandler(this.amortization_Click);
             // 
             // logoutButton
             // 
@@ -123,6 +123,7 @@
             this.registerHardware.TabIndex = 5;
             this.registerHardware.Text = "REJESTRACJA SPRZĘTU";
             this.registerHardware.UseVisualStyleBackColor = true;
+            this.registerHardware.Click += new System.EventHandler(this.registerHardware_Click);
             // 
             // registerSoftware
             // 
@@ -132,6 +133,7 @@
             this.registerSoftware.TabIndex = 6;
             this.registerSoftware.Text = "REJESTRACJA OPROGRAMOWANIA";
             this.registerSoftware.UseVisualStyleBackColor = true;
+            this.registerSoftware.Click += new System.EventHandler(this.registerSoftware_Click);
             // 
             // AccountantForm
             // 

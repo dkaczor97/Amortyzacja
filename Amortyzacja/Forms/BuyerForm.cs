@@ -20,6 +20,7 @@ namespace Amortyzacja.Forms
             InitializeComponent();
         }
 
+        public BuyerPresenter Presenter { get; set; }
         private void logoutButton_Click(object sender, EventArgs e)
         {
 
@@ -27,20 +28,18 @@ namespace Amortyzacja.Forms
 
         private void addHardware_Click(object sender, EventArgs e)
         {
-            BuyerPresenter buyerPresenter=new BuyerPresenter();
-            buyerPresenter.AddHardware();
+           
         }
 
         private void addSoftware_Click(object sender, EventArgs e)
         {
-            BuyerPresenter buyerPresenter=new BuyerPresenter();
-            buyerPresenter.AddSoftware();
+            
         }
 
         private void registerHardware_Click(object sender, EventArgs e)
         {
-            BuyerPresenter buyerPresenter=new BuyerPresenter();
-            buyerPresenter.RegisterHardware();
+            
+            
 
         }
 
@@ -59,6 +58,6 @@ namespace Amortyzacja.Forms
 
         }
 
-        public BuyerPresenter Presenter { get; set; }
+        
     }
 }

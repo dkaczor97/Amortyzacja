@@ -7,8 +7,8 @@ using Amortyzacja.Presenters;
 
 namespace Amortyzacja.View
 {
-    public interface IWorkerView
+    public interface IAddWorkerView
     {
-        WorkerPresenter Presenter { set; get; }
+        AddWorkerPresenter Presenter { set; get; }
     }
 }

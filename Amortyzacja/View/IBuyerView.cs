@@ -7,7 +7,7 @@ using Amortyzacja.Presenter;
 
 namespace Amortyzacja.View
 {
-    interface IBuyerView
+    public interface IBuyerView
     {
         BuyerPresenter Presenter { set; get; }
     }

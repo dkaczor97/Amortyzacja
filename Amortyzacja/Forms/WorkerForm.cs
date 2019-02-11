@@ -25,5 +25,15 @@ namespace Amortyzacja.Forms
         }
 
         public WorkerPresenter Presenter { get; set; }
+
+        private void registerHardware_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerSoftware_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

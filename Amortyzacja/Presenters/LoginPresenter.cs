@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Amortyzacja.Forms;
+using Amortyzacja.Presenters;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
@@ -33,13 +34,14 @@ namespace Amortyzacja.Presenter
                 if (result.Permission == 0)
                 {
                     WorkerForm workerForm=new WorkerForm();
+                    WorkerPresenter workerPresenter=new WorkerPresenter(workerForm);
                     workerForm.Show();
-                    
                     loginForm.Hide();
                 }
                 else if (result.Permission==1)
                 {
                     BuyerForm buyerForm=new BuyerForm();
+                    BuyerPresenter buyerPresenter=new BuyerPresenter(buyerForm);
                     buyerForm.Show();
                     loginForm.Hide();
 
@@ -47,12 +49,14 @@ namespace Amortyzacja.Presenter
                 else if (result.Permission == 2)
                 {
                     AccountantForm accountantForm=new AccountantForm();
+                    AccountantPresenter accountantPresenter=new AccountantPresenter(accountantForm);
                     accountantForm.Show();
                     loginForm.Hide();
                 }
                 else if (result.Permission == 3)
                 {
                     AdminForm adminForm=new AdminForm();
+                    AdminPresenter adminPresenter=new AdminPresenter(adminForm);
                     loginForm.Hide();
                     adminForm.Show();
                 }

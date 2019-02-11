@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Amortyzacja.Forms;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
@@ -10,21 +11,23 @@ namespace Amortyzacja.Presenter
     public class AdminPresenter
     {
         private IAdminView _adminView;
+        IODatabaseEntities db=new IODatabaseEntities();
 
         public AdminPresenter(IAdminView adminView)
         {
             _adminView = adminView;
+            _adminView.Presenter = this;
         }
 
         public void FreeSoftware()
         {
-            IODatabaseEntities db=new IODatabaseEntities();
             db.Softwares.Where(software => software.Workers_IdWorker != null);
         }
 
+       
         public void OccupiedSoftware()
         {
-            IODatabaseEntities db = new IODatabaseEntities();
+            
             db.Softwares.Where(software=>software.Workers_IdWorker==null);
 
 
@@ -32,7 +35,7 @@ namespace Amortyzacja.Presenter
 
         public void FreeHardware()
         {
-            IODatabaseEntities db = new IODatabaseEntities();
+            
             db.Hardwares.Where(hardware => hardware.Workers_IdWorker != null);
 
 
@@ -44,6 +47,14 @@ namespace Amortyzacja.Presenter
             db.Hardwares.Where(hardware=>hardware.Workers_IdWorker==null);
 
 
+        }
+
+        public void Logout()
+        {
+            LoginForm loginForm=new LoginForm();
+            LoginPresenter loginPresenter=new LoginPresenter(loginForm);
+            (_adminView as AdminForm).Hide();
+            loginForm.Show();
         }
     }
 }
