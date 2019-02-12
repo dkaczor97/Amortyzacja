@@ -14,7 +14,6 @@ namespace Amortyzacja.Presenters
         public AddWorkerPresenter(IAddWorkerView addWorkerView)
         {
             _addWorkerView = addWorkerView;
-            _addWorkerView.Presenter = this;
         }
 
     }

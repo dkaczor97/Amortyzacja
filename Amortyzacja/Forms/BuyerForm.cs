@@ -15,12 +15,25 @@ namespace Amortyzacja.Forms
 {
     public partial class BuyerForm : Form,IBuyerView
     {
+        BuyerPresenter presenter;
+
         public BuyerForm()
         {
             InitializeComponent();
         }
 
-        public BuyerPresenter Presenter { get; set; }
+        private BuyerPresenter Presenter
+        {
+            get
+            {
+                if (presenter == null)
+                {
+                    presenter = new BuyerPresenter(this);
+                }
+                return presenter;
+            }
+        }
+
         private void logoutButton_Click(object sender, EventArgs e)
         {
 

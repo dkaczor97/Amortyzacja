@@ -14,17 +14,29 @@ namespace Amortyzacja.Forms
 {
     public partial class WorkerForm : Form,IWorkerView
     {
+        WorkerPresenter presenter;
+
         public WorkerForm()
         {
             InitializeComponent();
+        }
+
+        private WorkerPresenter Presenter
+        {
+            get
+            {
+                if (presenter == null)
+                {
+                    presenter = new WorkerPresenter(this);
+                }
+                return presenter;
+            }
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
 
         }
-
-        public WorkerPresenter Presenter { get; set; }
 
         private void registerHardware_Click(object sender, EventArgs e)
         {

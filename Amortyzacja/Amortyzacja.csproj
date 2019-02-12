@@ -80,6 +80,7 @@
     <Compile Include="Employment.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Enums\EAccountPermission.cs" />
     <Compile Include="Forms\AccountantForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +129,7 @@
     <Compile Include="License.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Presenters\AccountantPresenter.cs" />
     <Compile Include="Presenters\AddWorkerPresenter.cs" />
     <Compile Include="Presenters\AdminPresenter.cs" />

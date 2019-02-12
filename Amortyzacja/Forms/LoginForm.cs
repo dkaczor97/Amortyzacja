@@ -15,6 +15,7 @@ namespace Amortyzacja
 {
     public partial class LoginForm : Form,ILoginView
     {
+        private LoginPresenter presenter;
         public LoginForm()
         {
             InitializeComponent();
@@ -34,7 +35,17 @@ namespace Amortyzacja
             set => PasswordBox.Text = value;
         }
 
-        public LoginPresenter Presenter { set; get; }
+        public LoginPresenter Presenter
+        {
+            get
+            {
+                if (presenter == null)
+                {
+                    presenter = new LoginPresenter(this);
+                }
+                return presenter;
+            }
+        }
 
         private void loginButton_Click(object sender, EventArgs e)
         {

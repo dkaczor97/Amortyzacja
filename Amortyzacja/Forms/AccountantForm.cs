@@ -14,12 +14,24 @@ namespace Amortyzacja
 {
     public partial class AccountantForm : Form,IAccountantView
     {
+        AccountantPresenter presenter;
+
         public AccountantForm()
         {
             InitializeComponent();
         }
 
-        public AccountantPresenter Presenter { get; set; }
+        private AccountantPresenter Presenter
+        {
+            get
+            {
+                if (presenter == null)
+                {
+                    presenter = new AccountantPresenter(this);
+                }
+                return presenter;
+            }
+        }
 
 
         private void logoutButton_Click(object sender, EventArgs e)

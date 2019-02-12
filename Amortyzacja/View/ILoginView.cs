@@ -11,7 +11,5 @@ namespace Amortyzacja.View
     {
         string Login { set; get; }
         string Password { set; get; }
-
-        LoginPresenter Presenter { set; get; }
     }
 }

@@ -9,6 +9,5 @@ namespace Amortyzacja.View
 {
     public interface IWorkerView
     {
-        WorkerPresenter Presenter { set; get; }
     }
 }

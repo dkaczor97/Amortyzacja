@@ -13,8 +13,6 @@ namespace Amortyzacja.Presenter
         public AccountantPresenter(IAccountantView accountantView)
         {
             _accountantView = accountantView;
-            _accountantView.Presenter = this;
-
         }
 
         public void AddWorker()

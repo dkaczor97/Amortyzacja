@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Enums;
 using Amortyzacja.Forms;
+using Amortyzacja.Models;
 using Amortyzacja.Presenters;
 using Amortyzacja.View;
 
@@ -14,49 +16,46 @@ namespace Amortyzacja.Presenter
     public class LoginPresenter
     {
         private ILoginView _loginView;
+        private LoginModel _loginModel;
         
         public LoginPresenter(ILoginView loginView)
         {
             _loginView = loginView;
-            _loginView.Presenter = this;
+            _loginModel = new LoginModel();
         }
 
         public void LoginToApp(string login, string password)
         {
             //Account account=new Account(){UserLogin = login,UserPassword = password};
             IODatabaseEntities db=new IODatabaseEntities();
-            var result = db.Accounts.FirstOrDefault(account => account.UserLogin == login&&account.UserPassword==password);
-            if (result != null)
+            Account account = _loginModel.GetAccount(login, password);
+            if (account != null)
             {
-                Worker worker = result.Worker;
+                Worker worker = account.Worker;
                 AppSession.GetInstance().CurrentWorker = worker;
                 LoginForm loginForm = _loginView as LoginForm;
-                if (result.Permission == 0)
+                if (account.Permission == (int)EAccountPermission.Worker)
                 {
-                    WorkerForm workerForm=new WorkerForm();
-                    WorkerPresenter workerPresenter=new WorkerPresenter(workerForm);
+                    WorkerForm workerForm = new WorkerForm();
                     workerForm.Show();
                     loginForm.Hide();
                 }
-                else if (result.Permission==1)
+                else if (account.Permission == (int)EAccountPermission.Buyer)
                 {
                     BuyerForm buyerForm=new BuyerForm();
-                    BuyerPresenter buyerPresenter=new BuyerPresenter(buyerForm);
                     buyerForm.Show();
                     loginForm.Hide();
 
                 }
-                else if (result.Permission == 2)
+                else if (account.Permission == (int)EAccountPermission.Accountant)
                 {
                     AccountantForm accountantForm=new AccountantForm();
-                    AccountantPresenter accountantPresenter=new AccountantPresenter(accountantForm);
                     accountantForm.Show();
                     loginForm.Hide();
                 }
-                else if (result.Permission == 3)
+                else if (account.Permission == (int)EAccountPermission.Admin)
                 {
                     AdminForm adminForm=new AdminForm();
-                    AdminPresenter adminPresenter=new AdminPresenter(adminForm);
                     loginForm.Hide();
                     adminForm.Show();
                 }

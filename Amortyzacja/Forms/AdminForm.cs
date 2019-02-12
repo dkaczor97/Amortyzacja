@@ -21,7 +21,18 @@ namespace Amortyzacja.Forms
             InitializeComponent();
         }
 
-        public AdminPresenter Presenter { get; set; }
+        AdminPresenter presenter;
+        private AdminPresenter Presenter
+        {
+            get
+            {
+                if (presenter == null)
+                {
+                    presenter = new AdminPresenter(this);
+                }
+                return presenter;
+            }
+        }
 
 
         private void freeHardware_Click(object sender, EventArgs e)

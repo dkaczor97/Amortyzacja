@@ -14,11 +14,23 @@ namespace Amortyzacja.Forms
 {
     public partial class AddWorkerForm : Form,IAddWorkerView
     {
+        AddWorkerPresenter presenter;
         public AddWorkerForm()
         {
             InitializeComponent();
         }
 
-        public AddWorkerPresenter Presenter { set; get; }
+        private AddWorkerPresenter Presenter
+        {
+            get
+            {
+                if (presenter == null)
+                {
+                    presenter = new AddWorkerPresenter(this);
+                }
+                return presenter;
+            }
+        }
+
     }
 }

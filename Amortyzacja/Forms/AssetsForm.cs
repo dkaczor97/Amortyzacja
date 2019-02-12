@@ -21,5 +21,6 @@ namespace Amortyzacja.Forms
         {
 
         }
+
     }
 }

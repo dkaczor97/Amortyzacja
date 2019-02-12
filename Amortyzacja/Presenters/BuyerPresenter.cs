@@ -14,7 +14,6 @@ namespace Amortyzacja.Presenter
         public BuyerPresenter(IBuyerView buyerView)
         {
             _buyerView = buyerView;
-            _buyerView.Presenter = this;
         }
         public void AddSoftware()
         {

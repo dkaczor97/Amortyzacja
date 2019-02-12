@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Amortyzacja.Presenter;
 
-namespace Amortyzacja.View
+namespace Amortyzacja.Enums
 {
-    public interface IAdminView
+    public enum EAccountPermission
     {
+        Worker,
+        Buyer,
+        Accountant,
+        Admin
     }
 }

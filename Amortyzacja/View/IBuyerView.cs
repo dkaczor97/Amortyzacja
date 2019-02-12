@@ -9,6 +9,5 @@ namespace Amortyzacja.View
 {
     public interface IBuyerView
     {
-        BuyerPresenter Presenter { set; get; }
     }
 }

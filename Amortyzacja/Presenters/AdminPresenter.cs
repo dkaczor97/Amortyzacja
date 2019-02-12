@@ -16,7 +16,6 @@ namespace Amortyzacja.Presenter
         public AdminPresenter(IAdminView adminView)
         {
             _adminView = adminView;
-            _adminView.Presenter = this;
         }
 
         public void FreeSoftware()
