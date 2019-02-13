@@ -54,12 +54,12 @@ namespace Amortyzacja.Presenter
 
         public void RegisterSoftware()
         {
-            Navigator.GetInstance().Navigate((Form)_adminView,new RegisterAssetsForm());
+            Navigator.GetInstance().Navigate((Form)_adminView,new RegisterAssetsForm(EAssets.Software));
         }
 
         public void RegisterHardware()
         {
-            Navigator.GetInstance().Navigate((Form)_adminView, new RegisterAssetsForm());
+            Navigator.GetInstance().Navigate((Form)_adminView, new RegisterAssetsForm(EAssets.Hardware));
         }
 
         public void Logout()

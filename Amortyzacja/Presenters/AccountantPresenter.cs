@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Enums;
 using Amortyzacja.Forms;
 using Amortyzacja.Navigaton;
 using Amortyzacja.View;
@@ -37,13 +38,13 @@ namespace Amortyzacja.Presenter
 
         public void RegisterSoftware()
         {
-            Navigator.GetInstance().Navigate((Form)_accountantView,new RegisterAssetsForm());
+            Navigator.GetInstance().Navigate((Form)_accountantView,new RegisterAssetsForm(EAssets.Software));
 
         }
 
         public void RegisterHardware()
         {
-            Navigator.GetInstance().Navigate((Form)_accountantView, new RegisterAssetsForm());
+            Navigator.GetInstance().Navigate((Form)_accountantView, new RegisterAssetsForm(EAssets.Hardware));
         }
         public void Logout()
         {

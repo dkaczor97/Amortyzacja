@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Enums;
 using Amortyzacja.Navigaton;
 using Amortyzacja.Presenters;
 using Amortyzacja.View;
@@ -16,9 +17,12 @@ namespace Amortyzacja.Forms
     public partial class RegisterAssetsForm : Form,IRegisterAssetsView
     {
         private RegisterAssetsPresenter _registerAssetsPresenter = null;
-        public RegisterAssetsForm()
+        
+        public RegisterAssetsForm(EAssets assets)
         {
             InitializeComponent();
+            SerialNumberTextBox = serialNumber;
+            AssetsType = assets;
         }
 
         private RegisterAssetsPresenter Presenter
@@ -40,5 +44,8 @@ namespace Amortyzacja.Forms
         {
             Presenter.Pass();
         }
+
+        public TextBox SerialNumberTextBox { get; private set; }
+        public EAssets AssetsType { get; private set; }
     }
 }

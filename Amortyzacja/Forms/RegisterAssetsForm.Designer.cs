@@ -30,7 +30,7 @@
         {
             this.lastForm = new System.Windows.Forms.Button();
             this.pass = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.serialNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -54,12 +54,12 @@
             this.pass.UseVisualStyleBackColor = true;
             this.pass.Click += new System.EventHandler(this.pass_Click);
             // 
-            // textBox1
+            // serialNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 22);
-            this.textBox1.TabIndex = 2;
+            this.serialNumber.Location = new System.Drawing.Point(310, 148);
+            this.serialNumber.Name = "serialNumber";
+            this.serialNumber.Size = new System.Drawing.Size(171, 22);
+            this.serialNumber.TabIndex = 2;
             // 
             // label1
             // 
@@ -76,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.serialNumber);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.lastForm);
             this.Name = "RegisterAssetsForm";
@@ -90,7 +90,7 @@
 
         private System.Windows.Forms.Button lastForm;
         private System.Windows.Forms.Button pass;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox serialNumber;
         private System.Windows.Forms.Label label1;
     }
 }
