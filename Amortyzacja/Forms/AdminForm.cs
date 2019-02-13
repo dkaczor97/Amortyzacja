@@ -57,22 +57,22 @@ namespace Amortyzacja.Forms
 
         private void tax_Click(object sender, EventArgs e)
         {
-            
+            Presenter.TaxPerPeriod();
         }
 
         private void assetsCosts_Click(object sender, EventArgs e)
         {
-            
+            Presenter.AssetsCosts();
         }
 
         private void registerHardware_Click(object sender, EventArgs e)
         {
-            
+            Presenter.RegisterHardware();
         }
 
         private void registerSoftware_Click(object sender, EventArgs e)
         {
-            
+            Presenter.RegisterSoftware();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)

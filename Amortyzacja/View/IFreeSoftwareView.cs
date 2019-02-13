@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Amortyzacja.Presenters
+namespace Amortyzacja.View
 {
-    class RegisterHardwarePresenter
+    interface IFreeSoftwareView
     {
     }
 }

@@ -12,24 +12,24 @@ using Amortyzacja.View;
 
 namespace Amortyzacja.Forms
 {
-    public partial class AmortizationForm : Form,IAmortizationView
+    public partial class OccupiedSoftwareForm : Form,IOccupiedSoftwareView
     {
-        private AmortizationPresenter _amortizationPresenter = null;
-        public AmortizationForm()
+        private OccupiedSoftwarePresenter _occupiedSoftwarePresenter = null;
+        public OccupiedSoftwareForm()
         {
             InitializeComponent();
         }
 
-        private AmortizationPresenter Presenter
+        private OccupiedSoftwarePresenter Presenter
         {
             get
             {
-                if(_amortizationPresenter==null)
-                    _amortizationPresenter=new AmortizationPresenter(this);
-                return _amortizationPresenter;
-
+                if(_occupiedSoftwarePresenter==null)
+                    _occupiedSoftwarePresenter=new OccupiedSoftwarePresenter(this);
+                return _occupiedSoftwarePresenter;
             }
         }
+
 
         private void lastForm_Click(object sender, EventArgs e)
         {

@@ -81,6 +81,7 @@
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Enums\EAccountPermission.cs" />
+    <Compile Include="Enums\EAssets.cs" />
     <Compile Include="Forms\AccountantForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +106,6 @@
     <Compile Include="Forms\AmortizationForm.Designer.cs">
       <DependentUpon>AmortizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AssetsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AssetsForm.Designer.cs">
-      <DependentUpon>AssetsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\BuyerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,17 +118,35 @@
     <Compile Include="Forms\DeleteWorkerForm.Designer.cs">
       <DependentUpon>DeleteWorkerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegisterHardwareForm.cs">
+    <Compile Include="Forms\FreeHardwareForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegisterHardwareForm.Designer.cs">
-      <DependentUpon>RegisterHardwareForm.cs</DependentUpon>
+    <Compile Include="Forms\FreeHardwareForm.Designer.cs">
+      <DependentUpon>FreeHardwareForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegisterSoftwareForm.cs">
+    <Compile Include="Forms\FreeSoftwareForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegisterSoftwareForm.Designer.cs">
-      <DependentUpon>RegisterSoftwareForm.cs</DependentUpon>
+    <Compile Include="Forms\FreeSoftwareForm.Designer.cs">
+      <DependentUpon>FreeSoftwareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OccupiedHardwareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OccupiedHardwareForm.Designer.cs">
+      <DependentUpon>OccupiedHardwareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OccupiedSoftwareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OccupiedSoftwareForm.Designer.cs">
+      <DependentUpon>OccupiedSoftwareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegisterAssetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterAssetsForm.Designer.cs">
+      <DependentUpon>RegisterAssetsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WorkerForm.cs">
       <SubType>Form</SubType>
@@ -160,10 +173,14 @@
     <Compile Include="Presenters\AccountantPresenter.cs" />
     <Compile Include="Presenters\AddWorkerPresenter.cs" />
     <Compile Include="Presenters\AdminPresenter.cs" />
+    <Compile Include="Presenters\AmortizationPresenter.cs" />
     <Compile Include="Presenters\BuyerPresenter.cs" />
+    <Compile Include="Presenters\FreeHardwarePresenter.cs" />
+    <Compile Include="Presenters\FreeSoftwarePresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
-    <Compile Include="Presenters\RegisterHardwarePresenter.cs" />
-    <Compile Include="Presenters\RegisterSoftwarePresenter.cs" />
+    <Compile Include="Presenters\OccupiedHardwarePresenter.cs" />
+    <Compile Include="Presenters\OccupiedSoftwarePresenter.cs" />
+    <Compile Include="Presenters\RegisterAssetsPresenter.cs" />
     <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,8 +199,14 @@
     <Compile Include="View\IAccountantView.cs" />
     <Compile Include="View\IAddWorkerView.cs" />
     <Compile Include="View\IAdminView.cs" />
+    <Compile Include="View\IAmortizationView.cs" />
     <Compile Include="View\IBuyerView.cs" />
+    <Compile Include="View\IFreeHardwareView.cs" />
+    <Compile Include="View\IFreeSoftwareView.cs" />
     <Compile Include="View\ILoginView.cs" />
+    <Compile Include="View\IOccupiedHardwareView.cs" />
+    <Compile Include="View\IOccupiedSoftwareView.cs" />
+    <Compile Include="View\IRegisterAssetsView.cs" />
     <Compile Include="View\IWorkerView.cs" />
     <Compile Include="Worker.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
@@ -197,20 +220,29 @@
     <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AssetsForm.resx">
-      <DependentUpon>AssetsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AmortizationForm.resx">
+      <DependentUpon>AmortizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BuyerForm.resx">
       <DependentUpon>BuyerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FreeHardwareForm.resx">
+      <DependentUpon>FreeHardwareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FreeSoftwareForm.resx">
+      <DependentUpon>FreeSoftwareForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegisterHardwareForm.resx">
-      <DependentUpon>RegisterHardwareForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OccupiedHardwareForm.resx">
+      <DependentUpon>OccupiedHardwareForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegisterSoftwareForm.resx">
-      <DependentUpon>RegisterSoftwareForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OccupiedSoftwareForm.resx">
+      <DependentUpon>OccupiedSoftwareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterAssetsForm.resx">
+      <DependentUpon>RegisterAssetsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkerForm.resx">
       <DependentUpon>WorkerForm.cs</DependentUpon>

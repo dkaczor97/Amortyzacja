@@ -30,8 +30,6 @@
         {
             this.addWorker = new System.Windows.Forms.Button();
             this.deleteWorker = new System.Windows.Forms.Button();
-            this.deleteHardware = new System.Windows.Forms.Button();
-            this.deleteSoftware = new System.Windows.Forms.Button();
             this.amortization = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,29 +58,9 @@
             this.deleteWorker.UseVisualStyleBackColor = true;
             this.deleteWorker.Click += new System.EventHandler(this.deleteWorker_Click);
             // 
-            // deleteHardware
-            // 
-            this.deleteHardware.Location = new System.Drawing.Point(3, 95);
-            this.deleteHardware.Name = "deleteHardware";
-            this.deleteHardware.Size = new System.Drawing.Size(262, 40);
-            this.deleteHardware.TabIndex = 2;
-            this.deleteHardware.Text = "USUŃ SPRZĘT";
-            this.deleteHardware.UseVisualStyleBackColor = true;
-            this.deleteHardware.Click += new System.EventHandler(this.deleteHardware_Click);
-            // 
-            // deleteSoftware
-            // 
-            this.deleteSoftware.Location = new System.Drawing.Point(3, 141);
-            this.deleteSoftware.Name = "deleteSoftware";
-            this.deleteSoftware.Size = new System.Drawing.Size(262, 40);
-            this.deleteSoftware.TabIndex = 3;
-            this.deleteSoftware.Text = "USUŃ OPROGRAMOWANIE";
-            this.deleteSoftware.UseVisualStyleBackColor = true;
-            this.deleteSoftware.Click += new System.EventHandler(this.deleteSoftware_Click);
-            // 
             // amortization
             // 
-            this.amortization.Location = new System.Drawing.Point(3, 187);
+            this.amortization.Location = new System.Drawing.Point(3, 95);
             this.amortization.Name = "amortization";
             this.amortization.Size = new System.Drawing.Size(262, 40);
             this.amortization.TabIndex = 4;
@@ -92,7 +70,7 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(3, 325);
+            this.logoutButton.Location = new System.Drawing.Point(3, 233);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(262, 40);
             this.logoutButton.TabIndex = 5;
@@ -104,20 +82,18 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.addWorker);
             this.flowLayoutPanel1.Controls.Add(this.deleteWorker);
-            this.flowLayoutPanel1.Controls.Add(this.deleteHardware);
-            this.flowLayoutPanel1.Controls.Add(this.deleteSoftware);
             this.flowLayoutPanel1.Controls.Add(this.amortization);
             this.flowLayoutPanel1.Controls.Add(this.registerHardware);
             this.flowLayoutPanel1.Controls.Add(this.registerSoftware);
             this.flowLayoutPanel1.Controls.Add(this.logoutButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(311, 22);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(291, 83);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(265, 394);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(265, 308);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // registerHardware
             // 
-            this.registerHardware.Location = new System.Drawing.Point(3, 233);
+            this.registerHardware.Location = new System.Drawing.Point(3, 141);
             this.registerHardware.Name = "registerHardware";
             this.registerHardware.Size = new System.Drawing.Size(262, 40);
             this.registerHardware.TabIndex = 5;
@@ -127,7 +103,7 @@
             // 
             // registerSoftware
             // 
-            this.registerSoftware.Location = new System.Drawing.Point(3, 279);
+            this.registerSoftware.Location = new System.Drawing.Point(3, 187);
             this.registerSoftware.Name = "registerSoftware";
             this.registerSoftware.Size = new System.Drawing.Size(262, 40);
             this.registerSoftware.TabIndex = 6;
@@ -152,8 +128,6 @@
 
         private System.Windows.Forms.Button addWorker;
         private System.Windows.Forms.Button deleteWorker;
-        private System.Windows.Forms.Button deleteHardware;
-        private System.Windows.Forms.Button deleteSoftware;
         private System.Windows.Forms.Button amortization;
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

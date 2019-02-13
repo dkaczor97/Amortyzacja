@@ -12,22 +12,21 @@ using Amortyzacja.View;
 
 namespace Amortyzacja.Forms
 {
-    public partial class AmortizationForm : Form,IAmortizationView
+    public partial class FreeHardwareForm : Form,IFreeHardwareView
     {
-        private AmortizationPresenter _amortizationPresenter = null;
-        public AmortizationForm()
+        private FreeHardwarePresenter _presenter = null;
+        public FreeHardwareForm()
         {
             InitializeComponent();
         }
 
-        private AmortizationPresenter Presenter
+        private FreeHardwarePresenter Presenter
         {
             get
             {
-                if(_amortizationPresenter==null)
-                    _amortizationPresenter=new AmortizationPresenter(this);
-                return _amortizationPresenter;
-
+                if(_presenter==null)
+                    _presenter=new FreeHardwarePresenter(this);
+                return _presenter;
             }
         }
 

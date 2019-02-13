@@ -1,6 +1,6 @@
 ﻿namespace Amortyzacja.Forms
 {
-    partial class AssetsForm
+    partial class OccupiedSoftwareForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,22 +33,22 @@
             // 
             // lastForm
             // 
-            this.lastForm.Location = new System.Drawing.Point(321, 377);
+            this.lastForm.Location = new System.Drawing.Point(325, 334);
             this.lastForm.Name = "lastForm";
-            this.lastForm.Size = new System.Drawing.Size(192, 40);
+            this.lastForm.Size = new System.Drawing.Size(122, 44);
             this.lastForm.TabIndex = 0;
-            this.lastForm.Text = "POPRZEDNIA STRONA";
+            this.lastForm.Text = "POWRÓT";
             this.lastForm.UseVisualStyleBackColor = true;
             this.lastForm.Click += new System.EventHandler(this.lastForm_Click);
             // 
-            // AssetsForm
+            // OccupiedSoftwareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lastForm);
-            this.Name = "AssetsForm";
-            this.Text = "AssetsForm";
+            this.Name = "OccupiedSoftwareForm";
+            this.Text = "OccupiedSoftwareForm";
             this.ResumeLayout(false);
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace Amortyzacja.Forms
 {
-    partial class AmortizationForm
+    partial class FreeHardwareForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,22 +33,22 @@
             // 
             // lastForm
             // 
-            this.lastForm.Location = new System.Drawing.Point(394, 337);
+            this.lastForm.Location = new System.Drawing.Point(357, 330);
             this.lastForm.Name = "lastForm";
-            this.lastForm.Size = new System.Drawing.Size(148, 48);
+            this.lastForm.Size = new System.Drawing.Size(118, 49);
             this.lastForm.TabIndex = 0;
             this.lastForm.Text = "POWRÓT";
             this.lastForm.UseVisualStyleBackColor = true;
             this.lastForm.Click += new System.EventHandler(this.lastForm_Click);
             // 
-            // AmortizationForm
+            // FreeHardwareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lastForm);
-            this.Name = "AmortizationForm";
-            this.Text = "AmortizationForm";
+            this.Name = "FreeHardwareForm";
+            this.Text = "FreeHardwareForm";
             this.ResumeLayout(false);
 
         }

@@ -7,27 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Navigaton;
 using Amortyzacja.Presenters;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Forms
 {
-    public partial class AmortizationForm : Form,IAmortizationView
+    public partial class RegisterAssetsForm : Form,IRegisterAssetsView
     {
-        private AmortizationPresenter _amortizationPresenter = null;
-        public AmortizationForm()
+        private RegisterAssetsPresenter _registerAssetsPresenter = null;
+        public RegisterAssetsForm()
         {
             InitializeComponent();
         }
 
-        private AmortizationPresenter Presenter
+        private RegisterAssetsPresenter Presenter
         {
             get
             {
-                if(_amortizationPresenter==null)
-                    _amortizationPresenter=new AmortizationPresenter(this);
-                return _amortizationPresenter;
-
+                if(_registerAssetsPresenter==null)
+                    _registerAssetsPresenter=new RegisterAssetsPresenter(this);
+                return _registerAssetsPresenter;
             }
         }
 

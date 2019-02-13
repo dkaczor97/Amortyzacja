@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Amortyzacja.Forms;
+using Amortyzacja.Navigaton;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
@@ -43,31 +45,23 @@ namespace Amortyzacja.Presenter
 
         public void Amortization()
         {
-            AmortizationForm amortizationForm=new AmortizationForm();
-            amortizationForm.Show();
-            (_accountantView as AccountantForm).Hide();
+            
+            Navigator.GetInstance().Navigate((Form)_accountantView,new AmortizationForm());
         }
 
         public void RegisterSoftware()
         {
-            RegisterSoftwareForm registerSoftwareForm=new RegisterSoftwareForm();
-            registerSoftwareForm.Show();
-            (_accountantView as AccountantForm).Hide();
+            Navigator.GetInstance().Navigate((Form)_accountantView,new RegisterAssetsForm());
 
         }
 
         public void RegisterHardware()
         {
-            RegisterHardwareForm registerHardwareForm=new RegisterHardwareForm();
-            registerHardwareForm.Show();
-            (_accountantView as AccountantForm).Hide();
+            Navigator.GetInstance().Navigate((Form)_accountantView, new RegisterAssetsForm());
         }
         public void Logout()
         {
-            LoginForm loginForm=new LoginForm();
-            LoginPresenter loginPresenter=new LoginPresenter(loginForm);
-            (_accountantView as AccountantForm).Hide();
-            loginForm.Show();
+            Navigator.GetInstance().Navigate((Form)_accountantView, new LoginForm());
         }
     }
 }
