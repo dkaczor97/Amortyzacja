@@ -18,7 +18,11 @@ namespace Amortyzacja.Forms
         public AmortizationForm()
         {
             InitializeComponent();
+            YearTextBox = year;
+            SerialNumberTextBox = serialNumber;
         }
+
+
 
         private AmortizationPresenter Presenter
         {
@@ -35,5 +39,14 @@ namespace Amortyzacja.Forms
         {
             Presenter.LastForm();
         }
+
+        private void pass_Click(object sender, EventArgs e)
+        {
+            Presenter.Pass();
+        }
+
+
+        public TextBox YearTextBox { get; private set; }
+        public TextBox SerialNumberTextBox { get; private set; }
     }
 }

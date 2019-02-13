@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="Models\AccountantModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\AmortizationModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Navigaton\Navigator.cs" />
     <Compile Include="Presenters\AccountantPresenter.cs" />
