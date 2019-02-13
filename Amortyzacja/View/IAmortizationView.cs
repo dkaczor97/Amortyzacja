@@ -11,5 +11,7 @@ namespace Amortyzacja.View
     {
         TextBox YearTextBox {  get; }
         TextBox SerialNumberTextBox { get; }
+
+        ListView HardwareListView { get; }
     }
 }

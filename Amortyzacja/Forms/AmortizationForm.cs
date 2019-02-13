@@ -20,6 +20,8 @@ namespace Amortyzacja.Forms
             InitializeComponent();
             YearTextBox = year;
             SerialNumberTextBox = serialNumber;
+            HardwareListView = hardwareListView;
+            Presenter.FindHardware();
         }
 
 
@@ -48,5 +50,6 @@ namespace Amortyzacja.Forms
 
         public TextBox YearTextBox { get; private set; }
         public TextBox SerialNumberTextBox { get; private set; }
+        public ListView HardwareListView { get; private set; }
     }
 }

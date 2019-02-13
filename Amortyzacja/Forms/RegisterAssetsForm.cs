@@ -35,5 +35,10 @@ namespace Amortyzacja.Forms
         {
             Presenter.LastForm();
         }
+
+        private void pass_Click(object sender, EventArgs e)
+        {
+            Presenter.Pass();
+        }
     }
 }

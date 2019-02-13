@@ -40,5 +40,10 @@ namespace Amortyzacja.Models
             db.Amortizations.Add(tmpAmortization);
             db.SaveChanges();
         }
+
+        public IQueryable<Hardware> FindHardware()
+        {
+            return db.Hardwares.Where(hardware => hardware.Amortization == null);
+        }
     }
 }

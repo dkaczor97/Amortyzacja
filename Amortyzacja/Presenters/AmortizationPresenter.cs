@@ -20,6 +20,7 @@ namespace Amortyzacja.Presenters
         {
             _amortizationView = amortizationView;
             _amortizationModel=new AmortizationModel();
+            
            
         }
 
@@ -35,23 +36,36 @@ namespace Amortyzacja.Presenters
                 
                 int year = int.Parse(_amortizationView.YearTextBox.Text);
                 string serialNumber = _amortizationView.SerialNumberTextBox.Text;
+                if (year <= 0)
+                {
+                    MessageBox.Show("POLE ZOSTAŁO BŁEDNIE WYPEŁNIONE");
+                    return;
+                }
                 _amortizationModel.Amortization(serialNumber,year);
-               
-
-
             }
-            catch (FormatException formatException)
+            catch (FormatException)
             {
                 MessageBox.Show("ŹLE WYPEŁNIONE POLE");
             }
-            
-            
         }
 
         public void LastForm()
         {
             Navigator.GetInstance().Navigate((AmortizationForm)_amortizationView,new AccountantForm());
 
+        }
+
+        public void FindHardware()
+        {
+            ListView listView = _amortizationView.HardwareListView;
+            IQueryable<Hardware> collection = _amortizationModel.FindHardware();
+            foreach (Hardware hardware in collection)
+            {
+                Purchase purchase = hardware.Purchase;
+                string[] elemTab = {hardware.SerialNumber, hardware.Type, purchase.Price.ToString()};
+                ListViewItem item=new ListViewItem(elemTab);
+                listView.Items.Add(item);
+            }
         }
     }
 }

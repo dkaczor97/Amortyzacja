@@ -50,16 +50,6 @@ namespace Amortyzacja
             Presenter.DeleteWorker();
         }
 
-        private void deleteHardware_Click(object sender, EventArgs e)
-        {
-            Presenter.DeleteHardware();
-        }
-
-        private void deleteSoftware_Click(object sender, EventArgs e)
-        {
-            Presenter.DeleteSoftware();
-        }
-
         private void amortization_Click(object sender, EventArgs e)
         {
             Presenter.Amortization();

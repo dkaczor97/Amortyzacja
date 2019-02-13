@@ -37,29 +37,21 @@ namespace Amortyzacja.Presenter
                 LoginForm loginForm = _loginView as LoginForm;
                 if (account.Permission == (int)EAccountPermission.Worker)
                 {
-                    WorkerForm workerForm = new WorkerForm();
-                    workerForm.Show();
-                    loginForm.Hide();
+                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new BuyerForm());
                 }
                 else if (account.Permission == (int)EAccountPermission.Buyer)
                 {
-                    BuyerForm buyerForm=new BuyerForm();
-                    buyerForm.Show();
-                    loginForm.Hide();
+                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new BuyerForm());
 
                 }
                 else if (account.Permission == (int)EAccountPermission.Accountant)
                 {
-                    AccountantForm accountantForm=new AccountantForm();
-                    accountantForm.Show();
-                    loginForm.Hide();
+                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new AccountantForm());
                 }
                 else if (account.Permission == (int)EAccountPermission.Admin)
                 {
-                    
                     Navigator.GetInstance().Navigate((LoginForm)_loginView,new AdminForm());
                 }
-
             }
             else
             {

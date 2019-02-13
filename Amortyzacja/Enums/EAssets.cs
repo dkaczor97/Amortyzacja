@@ -8,9 +8,7 @@ namespace Amortyzacja.Enums
 {
     public enum EAssets
     {
-        FreeSoftware,
-        OccupiedSoftware,
-        FreeHardware,
-        OccupiedHardware
+        Software,
+        Hardware
     }
 }

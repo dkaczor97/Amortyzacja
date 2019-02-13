@@ -42,7 +42,7 @@
             // 
             this.addWorker.Location = new System.Drawing.Point(3, 3);
             this.addWorker.Name = "addWorker";
-            this.addWorker.Size = new System.Drawing.Size(262, 40);
+            this.addWorker.Size = new System.Drawing.Size(294, 40);
             this.addWorker.TabIndex = 0;
             this.addWorker.Text = "DODAJ PRACOWNIKA";
             this.addWorker.UseVisualStyleBackColor = true;
@@ -52,7 +52,7 @@
             // 
             this.deleteWorker.Location = new System.Drawing.Point(3, 49);
             this.deleteWorker.Name = "deleteWorker";
-            this.deleteWorker.Size = new System.Drawing.Size(262, 40);
+            this.deleteWorker.Size = new System.Drawing.Size(294, 40);
             this.deleteWorker.TabIndex = 1;
             this.deleteWorker.Text = "USUŃ PRACOWNIKA";
             this.deleteWorker.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             // 
             this.amortization.Location = new System.Drawing.Point(3, 95);
             this.amortization.Name = "amortization";
-            this.amortization.Size = new System.Drawing.Size(262, 40);
+            this.amortization.Size = new System.Drawing.Size(294, 40);
             this.amortization.TabIndex = 4;
             this.amortization.Text = "WYSOKOŚĆ AMORTYZACJI";
             this.amortization.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             // 
             this.logoutButton.Location = new System.Drawing.Point(3, 233);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(262, 40);
+            this.logoutButton.Size = new System.Drawing.Size(294, 40);
             this.logoutButton.TabIndex = 5;
             this.logoutButton.Text = "WYLOGUJ";
             this.logoutButton.UseVisualStyleBackColor = true;
@@ -86,16 +86,16 @@
             this.flowLayoutPanel1.Controls.Add(this.registerHardware);
             this.flowLayoutPanel1.Controls.Add(this.registerSoftware);
             this.flowLayoutPanel1.Controls.Add(this.logoutButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(291, 83);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(266, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(265, 308);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(297, 310);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // registerHardware
             // 
             this.registerHardware.Location = new System.Drawing.Point(3, 141);
             this.registerHardware.Name = "registerHardware";
-            this.registerHardware.Size = new System.Drawing.Size(262, 40);
+            this.registerHardware.Size = new System.Drawing.Size(294, 40);
             this.registerHardware.TabIndex = 5;
             this.registerHardware.Text = "REJESTRACJA SPRZĘTU";
             this.registerHardware.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // 
             this.registerSoftware.Location = new System.Drawing.Point(3, 187);
             this.registerSoftware.Name = "registerSoftware";
-            this.registerSoftware.Size = new System.Drawing.Size(262, 40);
+            this.registerSoftware.Size = new System.Drawing.Size(294, 40);
             this.registerSoftware.TabIndex = 6;
             this.registerSoftware.Text = "REJESTRACJA OPROGRAMOWANIA";
             this.registerSoftware.UseVisualStyleBackColor = true;

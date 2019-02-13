@@ -20,29 +20,15 @@ namespace Amortyzacja.Presenter
 
         public void AddWorker()
         {
-            AddWorkerForm addWorkerForm=new AddWorkerForm();
-            addWorkerForm.Show();
-            (_accountantView as AccountantForm).Hide();
+            Navigator.GetInstance().Navigate((Form)_accountantView, new AddWorkerForm());
 
         }
 
         public void DeleteWorker()
         {
-            DeleteWorkerForm deleteWorkerForm=new DeleteWorkerForm();
-            deleteWorkerForm.Show();
-            (_accountantView as AccountantForm).Hide();
+            Navigator.GetInstance().Navigate((Form)_accountantView, new DeleteWorkerForm());
         }
-
-        public void DeleteSoftware()
-        {
-
-        }
-
-        public void DeleteHardware()
-        {
-
-        }
-
+        
         public void Amortization()
         {
             

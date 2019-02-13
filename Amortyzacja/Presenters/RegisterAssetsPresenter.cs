@@ -20,5 +20,10 @@ namespace Amortyzacja.Presenters
         {
             Navigator.GetInstance().NavigateBack();
         }
+
+        public void Pass()
+        {
+
+        }
     }
 }
