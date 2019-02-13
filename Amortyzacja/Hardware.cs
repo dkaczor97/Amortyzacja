@@ -14,22 +14,15 @@ namespace Amortyzacja
     
     public partial class Hardware
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Hardware()
-        {
-            this.Amortizations = new HashSet<Amortization>();
-            this.Purchases = new HashSet<Purchase>();
-        }
-    
         public int IdHardware { get; set; }
         public string Type { get; set; }
-        public Nullable<int> Workers_IdWorker { get; set; }
         public string SerialNumber { get; set; }
+        public Nullable<int> Workers_IdWorker { get; set; }
+        public Nullable<int> Amortizations_IdAmortization { get; set; }
+        public int Purchases_IdPurchase { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Amortization> Amortizations { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Purchase> Purchases { get; set; }
+        public virtual Amortization Amortization { get; set; }
+        public virtual Purchase Purchase { get; set; }
         public virtual Worker Worker { get; set; }
     }
 }

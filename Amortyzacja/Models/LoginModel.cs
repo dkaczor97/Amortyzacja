@@ -8,11 +8,11 @@ namespace Amortyzacja.Models
 {
     public class LoginModel
     {
-        IODatabaseEntities db;
+        DatabaseEntities db;
 
         public LoginModel()
         {
-            db = new IODatabaseEntities();
+            db = new DatabaseEntities();
         }
 
         public Account GetAccount(string login, string password)

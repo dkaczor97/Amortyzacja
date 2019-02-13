@@ -14,11 +14,17 @@ namespace Amortyzacja
     
     public partial class License
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public License()
+        {
+            this.Softwares = new HashSet<Software>();
+        }
+    
         public int IdLicense { get; set; }
         public System.DateTime PurchaseDate { get; set; }
         public double Price { get; set; }
-        public int Software_IdSoftware { get; set; }
     
-        public virtual Software Software { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Software> Softwares { get; set; }
     }
 }

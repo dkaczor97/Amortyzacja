@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="IODatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accounts">
           <Key>
-            <PropertyRef Name="IdAccount" />
+            <PropertyRef Name="IdAccounts" />
           </Key>
-          <Property Name="IdAccount" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAccounts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserLogin" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Permission" Type="int" Nullable="false" />
-          <Property Name="Worker_IdWorker" Type="int" Nullable="false" />
+          <Property Name="Workers_IdWorker" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Amortizations">
           <Key>
@@ -23,7 +23,7 @@
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="AmortizationAmount" Type="float" Nullable="false" />
           <Property Name="StartDate" Type="date" Nullable="false" />
-          <Property Name="Hardware_IdHardware" Type="int" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Employment">
           <Key>
@@ -40,8 +40,10 @@
           </Key>
           <Property Name="IdHardware" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Workers_IdWorker" Type="int" />
           <Property Name="SerialNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Workers_IdWorker" Type="int" />
+          <Property Name="Amortizations_IdAmortization" Type="int" />
+          <Property Name="Purchases_IdPurchase" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Licenses">
           <Key>
@@ -50,25 +52,25 @@
           <Property Name="IdLicense" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PurchaseDate" Type="date" Nullable="false" />
           <Property Name="Price" Type="float" Nullable="false" />
-          <Property Name="Software_IdSoftware" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Purchases">
           <Key>
             <PropertyRef Name="IdPurchase" />
           </Key>
           <Property Name="IdPurchase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PurchaseDate" Type="date" />
-          <Property Name="Price" Type="float" />
-          <Property Name="Hardware_IdHardware" Type="int" />
+          <Property Name="PurchaseDate" Type="date" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="Software">
           <Key>
             <PropertyRef Name="IdSoftware" />
           </Key>
           <Property Name="IdSoftware" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Workers_IdWorker" Type="int" />
+          <Property Name="SoftwareType" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SerialNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Workers_IdWorker" Type="int" />
+          <Property Name="Licenses_IdLicense" Type="int" />
+          <Property Name="Subscriptions_IdSubscription" Type="int" />
         </EntityType>
         <EntityType Name="Subscriptions">
           <Key>
@@ -78,7 +80,6 @@
           <Property Name="Price" Type="float" Nullable="false" />
           <Property Name="StartDate" Type="date" Nullable="false" />
           <Property Name="EndDate" Type="date" Nullable="false" />
-          <Property Name="Software_IdSoftware" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -97,8 +98,9 @@
           <Property Name="IdWorker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pesel" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Accounts__Worker__0F624AF8">
+        <Association Name="FK__Accounts__Worker__3A81B327">
           <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
           <End Role="Accounts" Type="Self.Accounts" Multiplicity="*" />
           <ReferentialConstraint>
@@ -106,23 +108,11 @@
               <PropertyRef Name="IdWorker" />
             </Principal>
             <Dependent Role="Accounts">
-              <PropertyRef Name="Worker_IdWorker" />
+              <PropertyRef Name="Workers_IdWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Amortizat__Hardw__76969D2E">
-          <End Role="Hardware" Type="Self.Hardware" Multiplicity="1" />
-          <End Role="Amortizations" Type="Self.Amortizations" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Hardware">
-              <PropertyRef Name="IdHardware" />
-            </Principal>
-            <Dependent Role="Amortizations">
-              <PropertyRef Name="Hardware_IdHardware" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Employmen__Worke__72C60C4A">
+        <Association Name="FK__Employmen__Worke__48CFD27E">
           <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
           <End Role="Employment" Type="Self.Employment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -134,43 +124,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Licenses__Softwa__7A672E12">
-          <End Role="Software" Type="Self.Software" Multiplicity="1" />
-          <End Role="Licenses" Type="Self.Licenses" Multiplicity="*" />
+        <Association Name="FK__Hardware__Amorti__5EBF139D">
+          <End Role="Amortizations" Type="Self.Amortizations" Multiplicity="0..1" />
+          <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Software">
-              <PropertyRef Name="IdSoftware" />
+            <Principal Role="Amortizations">
+              <PropertyRef Name="IdAmortization" />
             </Principal>
-            <Dependent Role="Licenses">
-              <PropertyRef Name="Software_IdSoftware" />
+            <Dependent Role="Hardware">
+              <PropertyRef Name="Amortizations_IdAmortization" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Purchases__Hardw__6B24EA82">
-          <End Role="Hardware" Type="Self.Hardware" Multiplicity="0..1" />
-          <End Role="Purchases" Type="Self.Purchases" Multiplicity="*" />
+        <Association Name="FK__Hardware__Purcha__5FB337D6">
+          <End Role="Purchases" Type="Self.Purchases" Multiplicity="1" />
+          <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Hardware">
-              <PropertyRef Name="IdHardware" />
+            <Principal Role="Purchases">
+              <PropertyRef Name="IdPurchase" />
             </Principal>
-            <Dependent Role="Purchases">
-              <PropertyRef Name="Hardware_IdHardware" />
+            <Dependent Role="Hardware">
+              <PropertyRef Name="Purchases_IdPurchase" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Subscript__Softw__7F2BE32F">
-          <End Role="Software" Type="Self.Software" Multiplicity="1" />
-          <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Software">
-              <PropertyRef Name="IdSoftware" />
-            </Principal>
-            <Dependent Role="Subscriptions">
-              <PropertyRef Name="Software_IdSoftware" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Hardware_Workers">
+        <Association Name="FK__Hardware__Worker__5DCAEF64">
           <End Role="Workers" Type="Self.Workers" Multiplicity="0..1" />
           <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
           <ReferentialConstraint>
@@ -182,7 +160,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Software_Workers">
+        <Association Name="FK__Software__Licens__52593CB8">
+          <End Role="Licenses" Type="Self.Licenses" Multiplicity="0..1" />
+          <End Role="Software" Type="Self.Software" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Licenses">
+              <PropertyRef Name="IdLicense" />
+            </Principal>
+            <Dependent Role="Software">
+              <PropertyRef Name="Licenses_IdLicense" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Software__Subscr__534D60F1">
+          <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="0..1" />
+          <End Role="Software" Type="Self.Software" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscriptions">
+              <PropertyRef Name="IdSubscription" />
+            </Principal>
+            <Dependent Role="Software">
+              <PropertyRef Name="Subscriptions_IdSubscription" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Software__Worker__5165187F">
           <End Role="Workers" Type="Self.Workers" Multiplicity="0..1" />
           <End Role="Software" Type="Self.Software" Multiplicity="*" />
           <ReferentialConstraint>
@@ -194,7 +196,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IODatabaseModelStoreContainer">
+        <EntityContainer Name="DatabaseModelStoreContainer">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Amortizations" EntityType="Self.Amortizations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employment" EntityType="Self.Employment" Schema="dbo" store:Type="Tables" />
@@ -205,35 +207,35 @@
           <EntitySet Name="Subscriptions" EntityType="Self.Subscriptions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Accounts__Worker__0F624AF8" Association="Self.FK__Accounts__Worker__0F624AF8">
+          <AssociationSet Name="FK__Accounts__Worker__3A81B327" Association="Self.FK__Accounts__Worker__3A81B327">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Accounts" EntitySet="Accounts" />
           </AssociationSet>
-          <AssociationSet Name="FK__Amortizat__Hardw__76969D2E" Association="Self.FK__Amortizat__Hardw__76969D2E">
-            <End Role="Hardware" EntitySet="Hardware" />
-            <End Role="Amortizations" EntitySet="Amortizations" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Employmen__Worke__72C60C4A" Association="Self.FK__Employmen__Worke__72C60C4A">
+          <AssociationSet Name="FK__Employmen__Worke__48CFD27E" Association="Self.FK__Employmen__Worke__48CFD27E">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Employment" EntitySet="Employment" />
           </AssociationSet>
-          <AssociationSet Name="FK__Licenses__Softwa__7A672E12" Association="Self.FK__Licenses__Softwa__7A672E12">
-            <End Role="Software" EntitySet="Software" />
-            <End Role="Licenses" EntitySet="Licenses" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Purchases__Hardw__6B24EA82" Association="Self.FK__Purchases__Hardw__6B24EA82">
+          <AssociationSet Name="FK__Hardware__Amorti__5EBF139D" Association="Self.FK__Hardware__Amorti__5EBF139D">
+            <End Role="Amortizations" EntitySet="Amortizations" />
             <End Role="Hardware" EntitySet="Hardware" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hardware__Purcha__5FB337D6" Association="Self.FK__Hardware__Purcha__5FB337D6">
             <End Role="Purchases" EntitySet="Purchases" />
+            <End Role="Hardware" EntitySet="Hardware" />
           </AssociationSet>
-          <AssociationSet Name="FK__Subscript__Softw__7F2BE32F" Association="Self.FK__Subscript__Softw__7F2BE32F">
-            <End Role="Software" EntitySet="Software" />
-            <End Role="Subscriptions" EntitySet="Subscriptions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Hardware_Workers" Association="Self.FK_Hardware_Workers">
+          <AssociationSet Name="FK__Hardware__Worker__5DCAEF64" Association="Self.FK__Hardware__Worker__5DCAEF64">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Hardware" EntitySet="Hardware" />
           </AssociationSet>
-          <AssociationSet Name="FK_Software_Workers" Association="Self.FK_Software_Workers">
+          <AssociationSet Name="FK__Software__Licens__52593CB8" Association="Self.FK__Software__Licens__52593CB8">
+            <End Role="Licenses" EntitySet="Licenses" />
+            <End Role="Software" EntitySet="Software" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Software__Subscr__534D60F1" Association="Self.FK__Software__Subscr__534D60F1">
+            <End Role="Subscriptions" EntitySet="Subscriptions" />
+            <End Role="Software" EntitySet="Software" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Software__Worker__5165187F" Association="Self.FK__Software__Worker__5165187F">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Software" EntitySet="Software" />
           </AssociationSet>
@@ -242,17 +244,17 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="IODatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Account">
           <Key>
-            <PropertyRef Name="IdAccount" />
+            <PropertyRef Name="IdAccounts" />
           </Key>
-          <Property Name="IdAccount" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAccounts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Permission" Type="Int32" Nullable="false" />
-          <Property Name="Worker_IdWorker" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK__Accounts__Worker__0F624AF8" FromRole="Accounts" ToRole="Workers" />
+          <Property Name="Workers_IdWorker" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK__Accounts__Worker__3A81B327" FromRole="Accounts" ToRole="Workers" />
         </EntityType>
         <EntityType Name="Amortization">
           <Key>
@@ -262,8 +264,8 @@
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AmortizationAmount" Type="Double" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Hardware_IdHardware" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Hardware" Relationship="Self.FK__Amortizat__Hardw__76969D2E" FromRole="Amortizations" ToRole="Hardware" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Hardwares" Relationship="Self.FK__Hardware__Amorti__5EBF139D" FromRole="Amortizations" ToRole="Hardware" />
         </EntityType>
         <EntityType Name="Employment">
           <Key>
@@ -273,7 +275,7 @@
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
           <Property Name="Workers_IdWorker" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK__Employmen__Worke__72C60C4A" FromRole="Employment" ToRole="Workers" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK__Employmen__Worke__48CFD27E" FromRole="Employment" ToRole="Workers" />
         </EntityType>
         <EntityType Name="Hardware">
           <Key>
@@ -281,11 +283,13 @@
           </Key>
           <Property Name="IdHardware" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Workers_IdWorker" Type="Int32" />
           <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Amortizations" Relationship="Self.FK__Amortizat__Hardw__76969D2E" FromRole="Hardware" ToRole="Amortizations" />
-          <NavigationProperty Name="Purchases" Relationship="Self.FK__Purchases__Hardw__6B24EA82" FromRole="Hardware" ToRole="Purchases" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK_Hardware_Workers" FromRole="Hardware" ToRole="Workers" />
+          <Property Name="Workers_IdWorker" Type="Int32" />
+          <Property Name="Amortizations_IdAmortization" Type="Int32" />
+          <Property Name="Purchases_IdPurchase" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Amortization" Relationship="Self.FK__Hardware__Amorti__5EBF139D" FromRole="Hardware" ToRole="Amortizations" />
+          <NavigationProperty Name="Purchase" Relationship="Self.FK__Hardware__Purcha__5FB337D6" FromRole="Hardware" ToRole="Purchases" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK__Hardware__Worker__5DCAEF64" FromRole="Hardware" ToRole="Workers" />
         </EntityType>
         <EntityType Name="License">
           <Key>
@@ -294,30 +298,30 @@
           <Property Name="IdLicense" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Price" Type="Double" Nullable="false" />
-          <Property Name="Software_IdSoftware" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Software" Relationship="Self.FK__Licenses__Softwa__7A672E12" FromRole="Licenses" ToRole="Software" />
+          <NavigationProperty Name="Softwares" Relationship="Self.FK__Software__Licens__52593CB8" FromRole="Licenses" ToRole="Software" />
         </EntityType>
         <EntityType Name="Purchase">
           <Key>
             <PropertyRef Name="IdPurchase" />
           </Key>
           <Property Name="IdPurchase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
-          <Property Name="Price" Type="Double" />
-          <Property Name="Hardware_IdHardware" Type="Int32" />
-          <NavigationProperty Name="Hardware" Relationship="Self.FK__Purchases__Hardw__6B24EA82" FromRole="Purchases" ToRole="Hardware" />
+          <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Hardwares" Relationship="Self.FK__Hardware__Purcha__5FB337D6" FromRole="Purchases" ToRole="Hardware" />
         </EntityType>
         <EntityType Name="Software">
           <Key>
             <PropertyRef Name="IdSoftware" />
           </Key>
           <Property Name="IdSoftware" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Workers_IdWorker" Type="Int32" />
+          <Property Name="SoftwareType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Licenses" Relationship="Self.FK__Licenses__Softwa__7A672E12" FromRole="Software" ToRole="Licenses" />
-          <NavigationProperty Name="Subscriptions" Relationship="Self.FK__Subscript__Softw__7F2BE32F" FromRole="Software" ToRole="Subscriptions" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK_Software_Workers" FromRole="Software" ToRole="Workers" />
+          <Property Name="Workers_IdWorker" Type="Int32" />
+          <Property Name="Licenses_IdLicense" Type="Int32" />
+          <Property Name="Subscriptions_IdSubscription" Type="Int32" />
+          <NavigationProperty Name="License" Relationship="Self.FK__Software__Licens__52593CB8" FromRole="Software" ToRole="Licenses" />
+          <NavigationProperty Name="Subscription" Relationship="Self.FK__Software__Subscr__534D60F1" FromRole="Software" ToRole="Subscriptions" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK__Software__Worker__5165187F" FromRole="Software" ToRole="Workers" />
         </EntityType>
         <EntityType Name="Subscription">
           <Key>
@@ -327,8 +331,7 @@
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Software_IdSoftware" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Software" Relationship="Self.FK__Subscript__Softw__7F2BE32F" FromRole="Subscriptions" ToRole="Software" />
+          <NavigationProperty Name="Softwares" Relationship="Self.FK__Software__Subscr__534D60F1" FromRole="Subscriptions" ToRole="Software" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -347,12 +350,13 @@
           <Property Name="IdWorker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Accounts" Relationship="Self.FK__Accounts__Worker__0F624AF8" FromRole="Workers" ToRole="Accounts" />
-          <NavigationProperty Name="Employments" Relationship="Self.FK__Employmen__Worke__72C60C4A" FromRole="Workers" ToRole="Employment" />
-          <NavigationProperty Name="Hardwares" Relationship="Self.FK_Hardware_Workers" FromRole="Workers" ToRole="Hardware" />
-          <NavigationProperty Name="Softwares" Relationship="Self.FK_Software_Workers" FromRole="Workers" ToRole="Software" />
+          <Property Name="Pesel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK__Accounts__Worker__3A81B327" FromRole="Workers" ToRole="Accounts" />
+          <NavigationProperty Name="Employments" Relationship="Self.FK__Employmen__Worke__48CFD27E" FromRole="Workers" ToRole="Employment" />
+          <NavigationProperty Name="Hardwares" Relationship="Self.FK__Hardware__Worker__5DCAEF64" FromRole="Workers" ToRole="Hardware" />
+          <NavigationProperty Name="Softwares" Relationship="Self.FK__Software__Worker__5165187F" FromRole="Workers" ToRole="Software" />
         </EntityType>
-        <Association Name="FK__Accounts__Worker__0F624AF8">
+        <Association Name="FK__Accounts__Worker__3A81B327">
           <End Role="Workers" Type="Self.Worker" Multiplicity="1" />
           <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -360,23 +364,23 @@
               <PropertyRef Name="IdWorker" />
             </Principal>
             <Dependent Role="Accounts">
-              <PropertyRef Name="Worker_IdWorker" />
+              <PropertyRef Name="Workers_IdWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Amortizat__Hardw__76969D2E">
-          <End Role="Hardware" Type="Self.Hardware" Multiplicity="1" />
-          <End Role="Amortizations" Type="Self.Amortization" Multiplicity="*" />
+        <Association Name="FK__Hardware__Amorti__5EBF139D">
+          <End Role="Amortizations" Type="Self.Amortization" Multiplicity="0..1" />
+          <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Hardware">
-              <PropertyRef Name="IdHardware" />
+            <Principal Role="Amortizations">
+              <PropertyRef Name="IdAmortization" />
             </Principal>
-            <Dependent Role="Amortizations">
-              <PropertyRef Name="Hardware_IdHardware" />
+            <Dependent Role="Hardware">
+              <PropertyRef Name="Amortizations_IdAmortization" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employmen__Worke__72C60C4A">
+        <Association Name="FK__Employmen__Worke__48CFD27E">
           <End Role="Workers" Type="Self.Worker" Multiplicity="1" />
           <End Role="Employment" Type="Self.Employment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -388,19 +392,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Purchases__Hardw__6B24EA82">
-          <End Role="Hardware" Type="Self.Hardware" Multiplicity="0..1" />
-          <End Role="Purchases" Type="Self.Purchase" Multiplicity="*" />
+        <Association Name="FK__Hardware__Purcha__5FB337D6">
+          <End Role="Purchases" Type="Self.Purchase" Multiplicity="1" />
+          <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Hardware">
-              <PropertyRef Name="IdHardware" />
+            <Principal Role="Purchases">
+              <PropertyRef Name="IdPurchase" />
             </Principal>
-            <Dependent Role="Purchases">
-              <PropertyRef Name="Hardware_IdHardware" />
+            <Dependent Role="Hardware">
+              <PropertyRef Name="Purchases_IdPurchase" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Hardware_Workers">
+        <Association Name="FK__Hardware__Worker__5DCAEF64">
           <End Role="Workers" Type="Self.Worker" Multiplicity="0..1" />
           <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
           <ReferentialConstraint>
@@ -412,31 +416,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Licenses__Softwa__7A672E12">
-          <End Role="Software" Type="Self.Software" Multiplicity="1" />
-          <End Role="Licenses" Type="Self.License" Multiplicity="*" />
+        <Association Name="FK__Software__Licens__52593CB8">
+          <End Role="Licenses" Type="Self.License" Multiplicity="0..1" />
+          <End Role="Software" Type="Self.Software" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Software">
-              <PropertyRef Name="IdSoftware" />
+            <Principal Role="Licenses">
+              <PropertyRef Name="IdLicense" />
             </Principal>
-            <Dependent Role="Licenses">
-              <PropertyRef Name="Software_IdSoftware" />
+            <Dependent Role="Software">
+              <PropertyRef Name="Licenses_IdLicense" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Subscript__Softw__7F2BE32F">
-          <End Role="Software" Type="Self.Software" Multiplicity="1" />
-          <End Role="Subscriptions" Type="Self.Subscription" Multiplicity="*" />
+        <Association Name="FK__Software__Subscr__534D60F1">
+          <End Role="Subscriptions" Type="Self.Subscription" Multiplicity="0..1" />
+          <End Role="Software" Type="Self.Software" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Software">
-              <PropertyRef Name="IdSoftware" />
+            <Principal Role="Subscriptions">
+              <PropertyRef Name="IdSubscription" />
             </Principal>
-            <Dependent Role="Subscriptions">
-              <PropertyRef Name="Software_IdSoftware" />
+            <Dependent Role="Software">
+              <PropertyRef Name="Subscriptions_IdSubscription" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Software_Workers">
+        <Association Name="FK__Software__Worker__5165187F">
           <End Role="Workers" Type="Self.Worker" Multiplicity="0..1" />
           <End Role="Software" Type="Self.Software" Multiplicity="*" />
           <ReferentialConstraint>
@@ -448,7 +452,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IODatabaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="Amortizations" EntityType="Self.Amortization" />
           <EntitySet Name="Employments" EntityType="Self.Employment" />
@@ -459,35 +463,35 @@
           <EntitySet Name="Subscriptions" EntityType="Self.Subscription" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Workers" EntityType="Self.Worker" />
-          <AssociationSet Name="FK__Accounts__Worker__0F624AF8" Association="Self.FK__Accounts__Worker__0F624AF8">
+          <AssociationSet Name="FK__Accounts__Worker__3A81B327" Association="Self.FK__Accounts__Worker__3A81B327">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Accounts" EntitySet="Accounts" />
           </AssociationSet>
-          <AssociationSet Name="FK__Amortizat__Hardw__76969D2E" Association="Self.FK__Amortizat__Hardw__76969D2E">
-            <End Role="Hardware" EntitySet="Hardwares" />
+          <AssociationSet Name="FK__Hardware__Amorti__5EBF139D" Association="Self.FK__Hardware__Amorti__5EBF139D">
             <End Role="Amortizations" EntitySet="Amortizations" />
+            <End Role="Hardware" EntitySet="Hardwares" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employmen__Worke__72C60C4A" Association="Self.FK__Employmen__Worke__72C60C4A">
+          <AssociationSet Name="FK__Employmen__Worke__48CFD27E" Association="Self.FK__Employmen__Worke__48CFD27E">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Employment" EntitySet="Employments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Purchases__Hardw__6B24EA82" Association="Self.FK__Purchases__Hardw__6B24EA82">
-            <End Role="Hardware" EntitySet="Hardwares" />
+          <AssociationSet Name="FK__Hardware__Purcha__5FB337D6" Association="Self.FK__Hardware__Purcha__5FB337D6">
             <End Role="Purchases" EntitySet="Purchases" />
+            <End Role="Hardware" EntitySet="Hardwares" />
           </AssociationSet>
-          <AssociationSet Name="FK_Hardware_Workers" Association="Self.FK_Hardware_Workers">
+          <AssociationSet Name="FK__Hardware__Worker__5DCAEF64" Association="Self.FK__Hardware__Worker__5DCAEF64">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Hardware" EntitySet="Hardwares" />
           </AssociationSet>
-          <AssociationSet Name="FK__Licenses__Softwa__7A672E12" Association="Self.FK__Licenses__Softwa__7A672E12">
-            <End Role="Software" EntitySet="Softwares" />
+          <AssociationSet Name="FK__Software__Licens__52593CB8" Association="Self.FK__Software__Licens__52593CB8">
             <End Role="Licenses" EntitySet="Licenses" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Subscript__Softw__7F2BE32F" Association="Self.FK__Subscript__Softw__7F2BE32F">
             <End Role="Software" EntitySet="Softwares" />
-            <End Role="Subscriptions" EntitySet="Subscriptions" />
           </AssociationSet>
-          <AssociationSet Name="FK_Software_Workers" Association="Self.FK_Software_Workers">
+          <AssociationSet Name="FK__Software__Subscr__534D60F1" Association="Self.FK__Software__Subscr__534D60F1">
+            <End Role="Subscriptions" EntitySet="Subscriptions" />
+            <End Role="Software" EntitySet="Softwares" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Software__Worker__5165187F" Association="Self.FK__Software__Worker__5165187F">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Software" EntitySet="Softwares" />
           </AssociationSet>
@@ -497,31 +501,31 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IODatabaseModelStoreContainer" CdmEntityContainer="IODatabaseEntities">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
           <EntitySetMapping Name="Accounts">
-            <EntityTypeMapping TypeName="IODatabaseModel.Account">
+            <EntityTypeMapping TypeName="DatabaseModel.Account">
               <MappingFragment StoreEntitySet="Accounts">
-                <ScalarProperty Name="IdAccount" ColumnName="IdAccount" />
+                <ScalarProperty Name="IdAccounts" ColumnName="IdAccounts" />
                 <ScalarProperty Name="UserLogin" ColumnName="UserLogin" />
                 <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
                 <ScalarProperty Name="Permission" ColumnName="Permission" />
-                <ScalarProperty Name="Worker_IdWorker" ColumnName="Worker_IdWorker" />
+                <ScalarProperty Name="Workers_IdWorker" ColumnName="Workers_IdWorker" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Amortizations">
-            <EntityTypeMapping TypeName="IODatabaseModel.Amortization">
+            <EntityTypeMapping TypeName="DatabaseModel.Amortization">
               <MappingFragment StoreEntitySet="Amortizations">
                 <ScalarProperty Name="IdAmortization" ColumnName="IdAmortization" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="AmortizationAmount" ColumnName="AmortizationAmount" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="Hardware_IdHardware" ColumnName="Hardware_IdHardware" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employments">
-            <EntityTypeMapping TypeName="IODatabaseModel.Employment">
+            <EntityTypeMapping TypeName="DatabaseModel.Employment">
               <MappingFragment StoreEntitySet="Employment">
                 <ScalarProperty Name="IdEmployment" ColumnName="IdEmployment" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
@@ -531,58 +535,59 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Hardwares">
-            <EntityTypeMapping TypeName="IODatabaseModel.Hardware">
+            <EntityTypeMapping TypeName="DatabaseModel.Hardware">
               <MappingFragment StoreEntitySet="Hardware">
                 <ScalarProperty Name="IdHardware" ColumnName="IdHardware" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Workers_IdWorker" ColumnName="Workers_IdWorker" />
                 <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Workers_IdWorker" ColumnName="Workers_IdWorker" />
+                <ScalarProperty Name="Amortizations_IdAmortization" ColumnName="Amortizations_IdAmortization" />
+                <ScalarProperty Name="Purchases_IdPurchase" ColumnName="Purchases_IdPurchase" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Licenses">
-            <EntityTypeMapping TypeName="IODatabaseModel.License">
+            <EntityTypeMapping TypeName="DatabaseModel.License">
               <MappingFragment StoreEntitySet="Licenses">
                 <ScalarProperty Name="IdLicense" ColumnName="IdLicense" />
                 <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Software_IdSoftware" ColumnName="Software_IdSoftware" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Purchases">
-            <EntityTypeMapping TypeName="IODatabaseModel.Purchase">
+            <EntityTypeMapping TypeName="DatabaseModel.Purchase">
               <MappingFragment StoreEntitySet="Purchases">
                 <ScalarProperty Name="IdPurchase" ColumnName="IdPurchase" />
                 <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Hardware_IdHardware" ColumnName="Hardware_IdHardware" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Softwares">
-            <EntityTypeMapping TypeName="IODatabaseModel.Software">
+            <EntityTypeMapping TypeName="DatabaseModel.Software">
               <MappingFragment StoreEntitySet="Software">
                 <ScalarProperty Name="IdSoftware" ColumnName="IdSoftware" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Workers_IdWorker" ColumnName="Workers_IdWorker" />
+                <ScalarProperty Name="SoftwareType" ColumnName="SoftwareType" />
                 <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Workers_IdWorker" ColumnName="Workers_IdWorker" />
+                <ScalarProperty Name="Licenses_IdLicense" ColumnName="Licenses_IdLicense" />
+                <ScalarProperty Name="Subscriptions_IdSubscription" ColumnName="Subscriptions_IdSubscription" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Subscriptions">
-            <EntityTypeMapping TypeName="IODatabaseModel.Subscription">
+            <EntityTypeMapping TypeName="DatabaseModel.Subscription">
               <MappingFragment StoreEntitySet="Subscriptions">
                 <ScalarProperty Name="IdSubscription" ColumnName="IdSubscription" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="Software_IdSoftware" ColumnName="Software_IdSoftware" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="IODatabaseModel.sysdiagram">
+            <EntityTypeMapping TypeName="DatabaseModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -593,11 +598,12 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Workers">
-            <EntityTypeMapping TypeName="IODatabaseModel.Worker">
+            <EntityTypeMapping TypeName="DatabaseModel.Worker">
               <MappingFragment StoreEntitySet="Workers">
                 <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,11 +14,17 @@ namespace Amortyzacja
     
     public partial class Purchase
     {
-        public int IdPurchase { get; set; }
-        public Nullable<System.DateTime> PurchaseDate { get; set; }
-        public Nullable<double> Price { get; set; }
-        public Nullable<int> Hardware_IdHardware { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Purchase()
+        {
+            this.Hardwares = new HashSet<Hardware>();
+        }
     
-        public virtual Hardware Hardware { get; set; }
+        public int IdPurchase { get; set; }
+        public System.DateTime PurchaseDate { get; set; }
+        public double Price { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Hardware> Hardwares { get; set; }
     }
 }

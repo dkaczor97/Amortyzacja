@@ -11,7 +11,7 @@ namespace Amortyzacja.Presenter
     public class AdminPresenter
     {
         private IAdminView _adminView;
-        IODatabaseEntities db=new IODatabaseEntities();
+        DatabaseEntities db=new DatabaseEntities();
 
         public AdminPresenter(IAdminView adminView)
         {
@@ -20,7 +20,7 @@ namespace Amortyzacja.Presenter
 
         public void FreeSoftware()
         {
-            db.Softwares.Where(software => software.Workers_IdWorker != null);
+            
         }
 
        
@@ -42,7 +42,7 @@ namespace Amortyzacja.Presenter
 
         public void OccupiedHardware()
         {
-            IODatabaseEntities db = new IODatabaseEntities();
+            DatabaseEntities db = new DatabaseEntities();
             db.Hardwares.Where(hardware=>hardware.Workers_IdWorker==null);
 
 

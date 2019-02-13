@@ -27,7 +27,7 @@ namespace Amortyzacja.Presenter
         public void LoginToApp(string login, string password)
         {
             //Account account=new Account(){UserLogin = login,UserPassword = password};
-            IODatabaseEntities db=new IODatabaseEntities();
+            DatabaseEntities db=new DatabaseEntities();
             Account account = _loginModel.GetAccount(login, password);
             if (account != null)
             {

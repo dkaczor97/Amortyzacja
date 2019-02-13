@@ -13,10 +13,10 @@ namespace Amortyzacja
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class IODatabaseEntities : DbContext
+    public partial class DatabaseEntities : DbContext
     {
-        public IODatabaseEntities()
-            : base("name=IODatabaseEntities")
+        public DatabaseEntities()
+            : base("name=DatabaseEntities")
         {
         }
     

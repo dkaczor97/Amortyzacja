@@ -26,6 +26,7 @@ namespace Amortyzacja
         public int IdWorker { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Pesel { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Account> Accounts { get; set; }

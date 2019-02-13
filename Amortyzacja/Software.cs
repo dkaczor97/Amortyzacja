@@ -14,22 +14,15 @@ namespace Amortyzacja
     
     public partial class Software
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Software()
-        {
-            this.Licenses = new HashSet<License>();
-            this.Subscriptions = new HashSet<Subscription>();
-        }
-    
         public int IdSoftware { get; set; }
-        public string Type { get; set; }
-        public Nullable<int> Workers_IdWorker { get; set; }
+        public string SoftwareType { get; set; }
         public string SerialNumber { get; set; }
+        public Nullable<int> Workers_IdWorker { get; set; }
+        public Nullable<int> Licenses_IdLicense { get; set; }
+        public Nullable<int> Subscriptions_IdSubscription { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<License> Licenses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Subscription> Subscriptions { get; set; }
+        public virtual License License { get; set; }
+        public virtual Subscription Subscription { get; set; }
         public virtual Worker Worker { get; set; }
     }
 }

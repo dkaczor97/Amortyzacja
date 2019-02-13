@@ -14,11 +14,11 @@ namespace Amortyzacja
     
     public partial class Account
     {
-        public int IdAccount { get; set; }
+        public int IdAccounts { get; set; }
         public string UserLogin { get; set; }
         public string UserPassword { get; set; }
         public int Permission { get; set; }
-        public int Worker_IdWorker { get; set; }
+        public int Workers_IdWorker { get; set; }
     
         public virtual Worker Worker { get; set; }
     }

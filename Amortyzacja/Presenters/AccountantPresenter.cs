@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Amortyzacja.Forms;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
@@ -17,13 +18,17 @@ namespace Amortyzacja.Presenter
 
         public void AddWorker()
         {
-
+            AddWorkerForm addWorkerForm=new AddWorkerForm();
+            addWorkerForm.Show();
+            (_accountantView as AccountantForm).Hide();
 
         }
 
         public void DeleteWorker()
         {
-
+            DeleteWorkerForm deleteWorkerForm=new DeleteWorkerForm();
+            deleteWorkerForm.Show();
+            (_accountantView as AccountantForm).Hide();
         }
 
         public void DeleteSoftware()
@@ -38,17 +43,24 @@ namespace Amortyzacja.Presenter
 
         public void Amortization()
         {
-
+            AmortizationForm amortizationForm=new AmortizationForm();
+            amortizationForm.Show();
+            (_accountantView as AccountantForm).Hide();
         }
 
         public void RegisterSoftware()
         {
+            RegisterSoftwareForm registerSoftwareForm=new RegisterSoftwareForm();
+            registerSoftwareForm.Show();
+            (_accountantView as AccountantForm).Hide();
 
         }
 
         public void RegisterHardware()
         {
-
+            RegisterHardwareForm registerHardwareForm=new RegisterHardwareForm();
+            registerHardwareForm.Show();
+            (_accountantView as AccountantForm).Hide();
         }
         public void Logout()
         {

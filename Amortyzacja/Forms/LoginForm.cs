@@ -35,7 +35,7 @@ namespace Amortyzacja
             set => PasswordBox.Text = value;
         }
 
-        public LoginPresenter Presenter
+        private LoginPresenter Presenter
         {
             get
             {

@@ -32,5 +32,15 @@ namespace Amortyzacja.Forms
             }
         }
 
+        private void loadFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog=new OpenFileDialog();
+            fileDialog.Filter = "TXT files|*.txt";
+            fileDialog.InitialDirectory = @"C:\";
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

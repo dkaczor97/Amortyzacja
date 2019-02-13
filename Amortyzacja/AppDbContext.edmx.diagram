@@ -4,25 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c4df9770c077462381bff20008633755" Name="Diagram1">
-        <EntityTypeShape EntityType="IODatabaseModel.Account" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.Amortization" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.Employment" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.Hardware" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.License" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.Purchase" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.Software" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.Subscription" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="IODatabaseModel.Worker" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
-        <AssociationConnector Association="IODatabaseModel.FK__Accounts__Worker__0F624AF8" ManuallyRouted="false" />
-        <AssociationConnector Association="IODatabaseModel.FK__Amortizat__Hardw__76969D2E" ManuallyRouted="false" />
-        <AssociationConnector Association="IODatabaseModel.FK__Employmen__Worke__72C60C4A" ManuallyRouted="false" />
-        <AssociationConnector Association="IODatabaseModel.FK__Purchases__Hardw__6B24EA82" ManuallyRouted="false" />
-        <AssociationConnector Association="IODatabaseModel.FK_Hardware_Workers" ManuallyRouted="false" />
-        <AssociationConnector Association="IODatabaseModel.FK__Licenses__Softwa__7A672E12" ManuallyRouted="false" />
-        <AssociationConnector Association="IODatabaseModel.FK__Subscript__Softw__7F2BE32F" ManuallyRouted="false" />
-        <AssociationConnector Association="IODatabaseModel.FK_Software_Workers" ManuallyRouted="false" />
+      <Diagram DiagramId="ca2c01081bdc4e9f830b5b57da035076" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.Account" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Amortization" Width="1.5" PointX="3.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Employment" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Hardware" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.License" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Purchase" Width="1.5" PointX="3.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Software" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Subscription" Width="1.5" PointX="3.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Worker" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK__Accounts__Worker__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Hardware__Amorti__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Employmen__Worke__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Hardware__Purcha__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Hardware__Worker__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Software__Licens__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Software__Subscr__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Software__Worker__5165187F" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

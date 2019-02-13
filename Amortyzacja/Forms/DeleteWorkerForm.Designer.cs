@@ -1,6 +1,6 @@
 ﻿namespace Amortyzacja.Forms
 {
-    partial class AddWorkerForm
+    partial class DeleteWorkerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.loadFile = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // loadFile
-            // 
-            this.loadFile.Location = new System.Drawing.Point(347, 177);
-            this.loadFile.Name = "loadFile";
-            this.loadFile.Size = new System.Drawing.Size(128, 50);
-            this.loadFile.TabIndex = 0;
-            this.loadFile.Text = "WCZYTAJ PLIK";
-            this.loadFile.UseVisualStyleBackColor = true;
-            this.loadFile.Click += new System.EventHandler(this.loadFile_Click);
-            // 
-            // AddWorkerForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.loadFile);
-            this.Name = "AddWorkerForm";
-            this.Text = "AddWorkerForm";
-            this.ResumeLayout(false);
-
+            this.Text = "DeleteWorker";
         }
 
         #endregion
-
-        private System.Windows.Forms.Button loadFile;
     }
 }

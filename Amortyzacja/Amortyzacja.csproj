@@ -99,6 +99,12 @@
     <Compile Include="Forms\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AmortizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AmortizationForm.Designer.cs">
+      <DependentUpon>AmortizationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AssetsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,24 @@
     </Compile>
     <Compile Include="Forms\BuyerForm.Designer.cs">
       <DependentUpon>BuyerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteWorkerForm.Designer.cs">
+      <DependentUpon>DeleteWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegisterHardwareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterHardwareForm.Designer.cs">
+      <DependentUpon>RegisterHardwareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegisterSoftwareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterSoftwareForm.Designer.cs">
+      <DependentUpon>RegisterSoftwareForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WorkerForm.cs">
       <SubType>Form</SubType>
@@ -129,12 +153,16 @@
     <Compile Include="License.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountantModel.cs" />
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Presenters\AccountantPresenter.cs" />
     <Compile Include="Presenters\AddWorkerPresenter.cs" />
     <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\BuyerPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\RegisterHardwarePresenter.cs" />
+    <Compile Include="Presenters\RegisterSoftwarePresenter.cs" />
     <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,6 +190,9 @@
     <EmbeddedResource Include="Forms\AccountantForm.resx">
       <DependentUpon>AccountantForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddWorkerForm.resx">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +204,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterHardwareForm.resx">
+      <DependentUpon>RegisterHardwareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterSoftwareForm.resx">
+      <DependentUpon>RegisterSoftwareForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkerForm.resx">
       <DependentUpon>WorkerForm.cs</DependentUpon>
