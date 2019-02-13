@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Amortyzacja.Enums;
 using Amortyzacja.Forms;
 using Amortyzacja.Models;
+using Amortyzacja.Navigaton;
 using Amortyzacja.Presenters;
 using Amortyzacja.View;
 
@@ -55,9 +56,8 @@ namespace Amortyzacja.Presenter
                 }
                 else if (account.Permission == (int)EAccountPermission.Admin)
                 {
-                    AdminForm adminForm=new AdminForm();
-                    loginForm.Hide();
-                    adminForm.Show();
+                    
+                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new AdminForm());
                 }
 
             }

@@ -9,6 +9,11 @@ namespace Amortyzacja
     class AppSession
     {
         private static AppSession _appSession=null;
+
+        protected AppSession()
+        {
+
+        }
         
         public static AppSession GetInstance()
         {

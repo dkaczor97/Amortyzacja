@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amortyzacja.Enums;
 using Amortyzacja.Forms;
 using Amortyzacja.Presenter;
 using Amortyzacja.View;
@@ -49,6 +50,7 @@ namespace Amortyzacja
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            
             Presenter.LoginToApp(Login,Password);
         }
     }

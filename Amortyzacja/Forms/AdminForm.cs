@@ -37,25 +37,22 @@ namespace Amortyzacja.Forms
 
         private void freeHardware_Click(object sender, EventArgs e)
         {
-            
-           
-
-            
+            Presenter.FreeHardware();
         }
 
         private void occupiedHardware_Click(object sender, EventArgs e)
         {
-            
+            Presenter.OccupiedHardware();
         }
 
         private void occupiedSoftware_Click(object sender, EventArgs e)
         {
-            
+            Presenter.OccupiedSoftware();
         }
 
         private void freeSoftware_Click(object sender, EventArgs e)
         {
-           
+           Presenter.FreeSoftware();
         }
 
         private void tax_Click(object sender, EventArgs e)

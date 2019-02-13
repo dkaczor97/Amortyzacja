@@ -9,9 +9,24 @@ namespace Amortyzacja.Models
     class AdminModel
     {
         DatabaseEntities db=new DatabaseEntities();
-        public void FreeSoftware()
+        public IQueryable<Software> FreeSoftware()
         {
-            db.Softwares.Where(software => software.Workers_IdWorker != null);
+            return db.Softwares.Where(software => software.Workers_IdWorker == null);
+        }
+
+        public IQueryable<Software> OccupiedSoftware()
+        {
+            return db.Softwares.Where(software => software.Workers_IdWorker != null);
+        }
+
+        public IQueryable<Hardware> FreeHardware()
+        {
+            return db.Hardwares.Where(hardware=>hardware.Workers_IdWorker==null);
+        }
+
+        public IQueryable<Hardware> OccupiedHardware()
+        {
+            return db.Hardwares.Where(hardware => hardware.Workers_IdWorker != null);
         }
     }
 }
