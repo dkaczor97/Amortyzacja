@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Amortyzacja.Enums;
+using Amortyzacja.Forms;
+using Amortyzacja.Navigaton;
 using Amortyzacja.View;
 
 namespace Amortyzacja.Presenter
@@ -27,13 +31,28 @@ namespace Amortyzacja.Presenter
 
         public void RegisterSoftware()
         {
+            Navigator.GetInstance().Navigate((Form)_buyerView, new RegisterAssetsForm(EAssets.Software));
 
         }
 
         public void RegisterHardware()
         {
+            Navigator.GetInstance().Navigate((Form)_buyerView, new RegisterAssetsForm(EAssets.Hardware));
+        }
+
+        public void Logout()
+        {
+            Navigator.GetInstance().Navigate((Form)_buyerView, new LoginForm());
+        }
+
+        public void FreeSoftware()
+        {
 
         }
 
+        public void FreeHardware()
+        {
+
+        }
     }
 }

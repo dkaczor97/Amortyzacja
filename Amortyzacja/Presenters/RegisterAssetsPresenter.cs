@@ -28,8 +28,7 @@ namespace Amortyzacja.Presenters
 
         public void Pass()
         {
-            TextBox serialNumberTextBox = _registerAssetsView.SerialNumberTextBox;
-            string serialNumber = serialNumberTextBox.Text;
+            string serialNumber = _registerAssetsView.SerialNumber;
             if (_registerAssetsView.AssetsType == EAssets.Hardware)
             {
                 _registerAssetsModel.RegisterHardware(serialNumber);
@@ -39,8 +38,6 @@ namespace Amortyzacja.Presenters
             {
                 _registerAssetsModel.RegisterSoftware(serialNumber);
             }
-
-
         }
     }
 }

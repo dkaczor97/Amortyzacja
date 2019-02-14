@@ -21,7 +21,6 @@ namespace Amortyzacja.Forms
         public RegisterAssetsForm(EAssets assets)
         {
             InitializeComponent();
-            SerialNumberTextBox = serialNumber;
             AssetsType = assets;
         }
 
@@ -45,7 +44,17 @@ namespace Amortyzacja.Forms
             Presenter.Pass();
         }
 
-        public TextBox SerialNumberTextBox { get; private set; }
+        public string SerialNumber
+        {
+            get
+            {
+                return serialNumber.Text;
+            }
+            private set
+            {
+                serialNumber.Text = value;
+            }
+        }
         public EAssets AssetsType { get; private set; }
     }
 }

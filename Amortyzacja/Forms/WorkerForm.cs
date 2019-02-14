@@ -35,17 +35,17 @@ namespace Amortyzacja.Forms
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-
+            Presenter.Logout();
         }
 
         private void registerHardware_Click(object sender, EventArgs e)
         {
-
+            Presenter.RegisterHardware();
         }
 
         private void registerSoftware_Click(object sender, EventArgs e)
         {
-
+            Presenter.RegisterSoftware();
         }
     }
 }

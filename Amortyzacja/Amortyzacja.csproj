@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="Enums\EAccountPermission.cs" />
     <Compile Include="Enums\EAssets.cs" />
+    <Compile Include="Enums\ESoftwarePaymentType.cs" />
     <Compile Include="Forms\AccountantForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +131,12 @@
     <Compile Include="Forms\FreeSoftwareForm.Designer.cs">
       <DependentUpon>FreeSoftwareForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HardwareAdditionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HardwareAdditionForm.Designer.cs">
+      <DependentUpon>HardwareAdditionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OccupiedHardwareForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +154,12 @@
     </Compile>
     <Compile Include="Forms\RegisterAssetsForm.Designer.cs">
       <DependentUpon>RegisterAssetsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SoftwareAdditionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SoftwareAdditionForm.Designer.cs">
+      <DependentUpon>SoftwareAdditionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WorkerForm.cs">
       <SubType>Form</SubType>
@@ -169,8 +182,10 @@
     <Compile Include="Models\AccountantModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AmortizationModel.cs" />
+    <Compile Include="Models\HardwareAdditionModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterAssetsModel.cs" />
+    <Compile Include="Models\SoftwareAdditionModel.cs" />
     <Compile Include="Navigaton\Navigator.cs" />
     <Compile Include="Presenters\AccountantPresenter.cs" />
     <Compile Include="Presenters\AddWorkerPresenter.cs" />
@@ -179,10 +194,12 @@
     <Compile Include="Presenters\BuyerPresenter.cs" />
     <Compile Include="Presenters\FreeHardwarePresenter.cs" />
     <Compile Include="Presenters\FreeSoftwarePresenter.cs" />
+    <Compile Include="Presenters\HardwareAdditionPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\OccupiedHardwarePresenter.cs" />
     <Compile Include="Presenters\OccupiedSoftwarePresenter.cs" />
     <Compile Include="Presenters\RegisterAssetsPresenter.cs" />
+    <Compile Include="Presenters\SoftwareAdditionPresenter.cs" />
     <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,10 +222,12 @@
     <Compile Include="View\IBuyerView.cs" />
     <Compile Include="View\IFreeHardwareView.cs" />
     <Compile Include="View\IFreeSoftwareView.cs" />
+    <Compile Include="View\IHardwareAdditionView.cs" />
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IOccupiedHardwareView.cs" />
     <Compile Include="View\IOccupiedSoftwareView.cs" />
     <Compile Include="View\IRegisterAssetsView.cs" />
+    <Compile Include="View\ISoftwareAdditionView.cs" />
     <Compile Include="View\IWorkerView.cs" />
     <Compile Include="Worker.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
@@ -234,6 +253,9 @@
     <EmbeddedResource Include="Forms\FreeSoftwareForm.resx">
       <DependentUpon>FreeSoftwareForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HardwareAdditionForm.resx">
+      <DependentUpon>HardwareAdditionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterAssetsForm.resx">
       <DependentUpon>RegisterAssetsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SoftwareAdditionForm.resx">
+      <DependentUpon>SoftwareAdditionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkerForm.resx">
       <DependentUpon>WorkerForm.cs</DependentUpon>
