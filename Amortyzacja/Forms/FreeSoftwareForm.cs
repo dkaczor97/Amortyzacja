@@ -18,6 +18,9 @@ namespace Amortyzacja.Forms
         public FreeSoftwareForm()
         {
             InitializeComponent();
+            Assets = freeSoftware;
+            Presenter.FreeSoftware();
+
         }
 
         private FreeSoftwarePresenter Presenter
@@ -33,5 +36,7 @@ namespace Amortyzacja.Forms
         {
             Presenter.LastForm();
         }
+
+        public ListView Assets { get; private set; }
     }
 }

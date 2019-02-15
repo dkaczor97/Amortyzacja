@@ -182,8 +182,12 @@
     <Compile Include="Models\AccountantModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AmortizationModel.cs" />
+    <Compile Include="Models\FreeHardwareModel.cs" />
+    <Compile Include="Models\FreeSoftwareModel.cs" />
     <Compile Include="Models\HardwareAdditionModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\OccupiedHardwareModel.cs" />
+    <Compile Include="Models\OccupiedSoftwareModel.cs" />
     <Compile Include="Models\RegisterAssetsModel.cs" />
     <Compile Include="Models\SoftwareAdditionModel.cs" />
     <Compile Include="Navigaton\Navigator.cs" />

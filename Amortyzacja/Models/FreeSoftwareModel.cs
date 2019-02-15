@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Amortyzacja.View
+namespace Amortyzacja.Models
 {
-    interface IOccupiedSoftwareView
+    class FreeSoftwareModel
     {
-        ListView Assets { get; }
     }
 }
