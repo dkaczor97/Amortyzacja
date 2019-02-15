@@ -21,12 +21,12 @@ namespace Amortyzacja.Presenter
         }
         public void AddSoftware()
         {
-
+            Navigator.GetInstance().Navigate((Form)_buyerView,new SoftwareAdditionForm());
         }
 
         public void AddHardware()
         {
-
+            Navigator.GetInstance().Navigate((Form)_buyerView,new HardwareAdditionForm());
         }
 
         public void RegisterSoftware()
