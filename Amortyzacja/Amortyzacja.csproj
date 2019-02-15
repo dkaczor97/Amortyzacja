@@ -180,8 +180,10 @@
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountantModel.cs" />
+    <Compile Include="Models\AddWorkerModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AmortizationModel.cs" />
+    <Compile Include="Models\DeleteWorkerModel.cs" />
     <Compile Include="Models\FreeHardwareModel.cs" />
     <Compile Include="Models\FreeSoftwareModel.cs" />
     <Compile Include="Models\HardwareAdditionModel.cs" />
@@ -196,6 +198,7 @@
     <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\AmortizationPresenter.cs" />
     <Compile Include="Presenters\BuyerPresenter.cs" />
+    <Compile Include="Presenters\DeleteWorkerPresenter.cs" />
     <Compile Include="Presenters\FreeHardwarePresenter.cs" />
     <Compile Include="Presenters\FreeSoftwarePresenter.cs" />
     <Compile Include="Presenters\HardwareAdditionPresenter.cs" />
@@ -224,6 +227,7 @@
     <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IAmortizationView.cs" />
     <Compile Include="View\IBuyerView.cs" />
+    <Compile Include="View\IDeleteWorkerView.cs" />
     <Compile Include="View\IFreeHardwareView.cs" />
     <Compile Include="View\IFreeSoftwareView.cs" />
     <Compile Include="View\IHardwareAdditionView.cs" />
@@ -250,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BuyerForm.resx">
       <DependentUpon>BuyerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteWorkerForm.resx">
+      <DependentUpon>DeleteWorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FreeHardwareForm.resx">
       <DependentUpon>FreeHardwareForm.cs</DependentUpon>

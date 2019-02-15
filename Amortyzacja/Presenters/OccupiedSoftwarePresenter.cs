@@ -12,11 +12,11 @@ namespace Amortyzacja.Presenters
     class OccupiedSoftwarePresenter
     {
         private IOccupiedSoftwareView _occupiedSoftwareView = null;
-        private OccupiedHardwareModel _occupiedHardwareModel = null;
+        private OccupiedSoftwareModel _occupiedSoftwareModel = null;
         public OccupiedSoftwarePresenter(IOccupiedSoftwareView occupiedSoftwareView)
         {
             _occupiedSoftwareView = occupiedSoftwareView;
-            _occupiedHardwareModel=new OccupiedHardwareModel();
+            _occupiedSoftwareModel=new OccupiedSoftwareModel();
         }
         public void LastForm()
         {
@@ -25,7 +25,7 @@ namespace Amortyzacja.Presenters
 
         public void OccupiedSoftware()
         {
-
+            _occupiedSoftwareModel.OccupiedSoftware(_occupiedSoftwareView.Assets);
         }
     }
 }

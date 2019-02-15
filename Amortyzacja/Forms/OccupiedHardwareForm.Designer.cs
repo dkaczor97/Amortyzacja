@@ -51,7 +51,7 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.occupiedHardware.Location = new System.Drawing.Point(169, 12);
+            this.occupiedHardware.Location = new System.Drawing.Point(166, 12);
             this.occupiedHardware.Name = "occupiedHardware";
             this.occupiedHardware.Size = new System.Drawing.Size(520, 350);
             this.occupiedHardware.TabIndex = 1;

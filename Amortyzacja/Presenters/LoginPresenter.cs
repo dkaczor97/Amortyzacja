@@ -34,10 +34,10 @@ namespace Amortyzacja.Presenter
             {
                 Worker worker = account.Worker;
                 AppSession.GetInstance().CurrentWorker = worker;
-                LoginForm loginForm = _loginView as LoginForm;
+                
                 if (account.Permission == (int)EAccountPermission.Worker)
                 {
-                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new BuyerForm());
+                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new WorkerForm());
                 }
                 else if (account.Permission == (int)EAccountPermission.Buyer)
                 {

@@ -25,6 +25,7 @@ namespace Amortyzacja.Presenters
 
         public void FreeSoftware()
         {
+            _freeSoftwareModel.FreeSoftware(_freeSoftwareView.Assets);
 
         }
     }
