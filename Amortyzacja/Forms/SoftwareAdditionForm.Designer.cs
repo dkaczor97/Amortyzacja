@@ -49,32 +49,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 111);
+            this.label1.Location = new System.Drawing.Point(237, 137);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Rodzaj";
             // 
             // txtSoftwareType
             // 
-            this.txtSoftwareType.Location = new System.Drawing.Point(151, 127);
+            this.txtSoftwareType.Location = new System.Drawing.Point(201, 156);
+            this.txtSoftwareType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoftwareType.Name = "txtSoftwareType";
-            this.txtSoftwareType.Size = new System.Drawing.Size(100, 20);
+            this.txtSoftwareType.Size = new System.Drawing.Size(132, 22);
             this.txtSoftwareType.TabIndex = 1;
             // 
             // txtSerialNumber
             // 
-            this.txtSerialNumber.Location = new System.Drawing.Point(151, 201);
+            this.txtSerialNumber.Location = new System.Drawing.Point(201, 247);
+            this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSerialNumber.Name = "txtSerialNumber";
-            this.txtSerialNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtSerialNumber.Size = new System.Drawing.Size(132, 22);
             this.txtSerialNumber.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(166, 185);
+            this.label2.Location = new System.Drawing.Point(221, 228);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Numer Seryjny";
             // 
@@ -84,93 +88,103 @@
             this.intSoftwarePaymentType.Items.AddRange(new object[] {
             "Subskrypcja",
             "Licencja"});
-            this.intSoftwarePaymentType.Location = new System.Drawing.Point(144, 268);
+            this.intSoftwarePaymentType.Location = new System.Drawing.Point(192, 330);
+            this.intSoftwarePaymentType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.intSoftwarePaymentType.Name = "intSoftwarePaymentType";
-            this.intSoftwarePaymentType.Size = new System.Drawing.Size(121, 21);
+            this.intSoftwarePaymentType.Size = new System.Drawing.Size(160, 24);
             this.intSoftwarePaymentType.TabIndex = 4;
             this.intSoftwarePaymentType.SelectedIndexChanged += new System.EventHandler(this.intSoftwarePaymentType_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 252);
+            this.label3.Location = new System.Drawing.Point(219, 310);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.Size = new System.Drawing.Size(112, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Rodzaj płatności";
             // 
             // datPurchaseDate
             // 
-            this.datPurchaseDate.Location = new System.Drawing.Point(302, 127);
+            this.datPurchaseDate.Location = new System.Drawing.Point(403, 156);
+            this.datPurchaseDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datPurchaseDate.Name = "datPurchaseDate";
-            this.datPurchaseDate.Size = new System.Drawing.Size(200, 20);
+            this.datPurchaseDate.Size = new System.Drawing.Size(265, 22);
             this.datPurchaseDate.TabIndex = 6;
             // 
             // datSubscriptionBeggining
             // 
             this.datSubscriptionBeggining.Enabled = false;
-            this.datSubscriptionBeggining.Location = new System.Drawing.Point(302, 179);
+            this.datSubscriptionBeggining.Location = new System.Drawing.Point(403, 220);
+            this.datSubscriptionBeggining.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datSubscriptionBeggining.Name = "datSubscriptionBeggining";
-            this.datSubscriptionBeggining.Size = new System.Drawing.Size(200, 20);
+            this.datSubscriptionBeggining.Size = new System.Drawing.Size(265, 22);
             this.datSubscriptionBeggining.TabIndex = 7;
             // 
             // datSubscriptionEnd
             // 
             this.datSubscriptionEnd.Enabled = false;
-            this.datSubscriptionEnd.Location = new System.Drawing.Point(302, 227);
+            this.datSubscriptionEnd.Location = new System.Drawing.Point(403, 279);
+            this.datSubscriptionEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datSubscriptionEnd.Name = "datSubscriptionEnd";
-            this.datSubscriptionEnd.Size = new System.Drawing.Size(200, 20);
+            this.datSubscriptionEnd.Size = new System.Drawing.Size(265, 22);
             this.datSubscriptionEnd.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(332, 108);
+            this.label4.Location = new System.Drawing.Point(443, 133);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Data zakupu";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(335, 160);
+            this.label5.Location = new System.Drawing.Point(447, 197);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 13);
+            this.label5.Size = new System.Drawing.Size(140, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Początek subskrypcji";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(338, 206);
+            this.label6.Location = new System.Drawing.Point(451, 254);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 13);
+            this.label6.Size = new System.Drawing.Size(125, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Koniec subskrypcji";
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(302, 268);
-            this.txtPrice.Mask = "$\\d{6}.00";
+            this.txtPrice.Location = new System.Drawing.Point(403, 330);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtPrice.Size = new System.Drawing.Size(132, 22);
             this.txtPrice.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(335, 251);
+            this.label7.Location = new System.Drawing.Point(447, 309);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(41, 17);
             this.label7.TabIndex = 13;
             this.label7.Text = "Cena";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(144, 328);
+            this.btnAdd.Location = new System.Drawing.Point(192, 404);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(100, 28);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -178,9 +192,10 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(335, 327);
+            this.btnPrevious.Location = new System.Drawing.Point(447, 402);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(100, 28);
             this.btnPrevious.TabIndex = 15;
             this.btnPrevious.Text = "Powrót";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -188,9 +203,9 @@
             // 
             // SoftwareAdditionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label7);
@@ -207,6 +222,7 @@
             this.Controls.Add(this.txtSerialNumber);
             this.Controls.Add(this.txtSoftwareType);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SoftwareAdditionForm";
             this.Text = "SoftwareAdditionForm";
             this.ResumeLayout(false);

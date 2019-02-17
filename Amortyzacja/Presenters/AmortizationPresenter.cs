@@ -58,6 +58,7 @@ namespace Amortyzacja.Presenters
         public void FindHardware()
         {
             ListView listView = _amortizationView.HardwareListView;
+            listView.Items.Clear();
             IQueryable<Hardware> collection = _amortizationModel.FindHardware();
             foreach (Hardware hardware in collection)
             {

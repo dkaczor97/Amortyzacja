@@ -28,11 +28,11 @@ namespace Amortyzacja.Models
                 elemTab[0] = typ;
                 elemTab[1] = serialNumber;
                 elemTab[2] = price.ToString();
-
+                ListViewItem item = new ListViewItem(elemTab);
+                freeHardware.Items.Add(item);
             }
 
-            ListViewItem item=new ListViewItem(elemTab);
-            freeHardware.Items.Add(item);
+            
         }
     }
 }

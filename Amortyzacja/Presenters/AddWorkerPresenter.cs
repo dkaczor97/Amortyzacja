@@ -36,26 +36,26 @@ namespace Amortyzacja.Presenters
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 stream=fileDialog.OpenFile();
+                
+                string line = null;
+                StreamReader streamReader = new StreamReader(stream);
+                List<string>paramList=new List<string>();
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    string line = null;
-                    StreamReader streamReader = new StreamReader(stream);
-                    List<string>paramList=new List<string>();
-                    while ((line = streamReader.ReadLine()) != null)
+                    MatchCollection matchCollection=Regex.Matches(line, @"\b([^\s]+)\b");
+                    foreach (Match match in matchCollection)
                     {
-                        MatchCollection matchCollection=Regex.Matches(line, @"\b([^\s]+)\b");
-                        foreach (Match match in matchCollection)
+                        string matchValue = match.Value;
+                        paramList.Add(matchValue);
+                        if (paramList.Count == 6)
                         {
-                            string matchValue = match.Value;
-                            paramList.Add(matchValue);
-                            if (paramList.Count == 6)
-                            {
-                                if (!_addWorkerModel.AddWorker(paramList[0], paramList[1], paramList[2], paramList[3], paramList[4], paramList[5]))
-                                    MessageBox.Show("BŁĘDNE DANE OSOBY: "+paramList[0]+ " "+paramList[1]);
-                                paramList.Clear();
-                            }
+                            if (!_addWorkerModel.AddWorker(paramList[0], paramList[1], paramList[2], paramList[3], paramList[4], paramList[5]))
+                                MessageBox.Show("BŁĘDNE DANE OSOBY: "+paramList[0]+ " "+paramList[1]);
+                            paramList.Clear();
                         }
                     }
-                }
+                }       
+                
             }
         }
     }

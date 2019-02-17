@@ -43,7 +43,7 @@
             // 
             this.addHardware.Location = new System.Drawing.Point(3, 3);
             this.addHardware.Name = "addHardware";
-            this.addHardware.Size = new System.Drawing.Size(254, 40);
+            this.addHardware.Size = new System.Drawing.Size(277, 40);
             this.addHardware.TabIndex = 0;
             this.addHardware.Text = "DODAJ SPRZĘT";
             this.addHardware.UseVisualStyleBackColor = true;
@@ -53,7 +53,7 @@
             // 
             this.addSoftware.Location = new System.Drawing.Point(3, 49);
             this.addSoftware.Name = "addSoftware";
-            this.addSoftware.Size = new System.Drawing.Size(254, 40);
+            this.addSoftware.Size = new System.Drawing.Size(277, 40);
             this.addSoftware.TabIndex = 1;
             this.addSoftware.Text = "DODAJ OPROGRAMOWANIE";
             this.addSoftware.UseVisualStyleBackColor = true;
@@ -68,16 +68,16 @@
             this.flowLayoutPanel1.Controls.Add(this.freeHardware);
             this.flowLayoutPanel1.Controls.Add(this.freeSoftware);
             this.flowLayoutPanel1.Controls.Add(this.logoutButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(304, 43);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(264, 39);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(258, 353);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(281, 353);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // registerHardware
             // 
             this.registerHardware.Location = new System.Drawing.Point(3, 95);
             this.registerHardware.Name = "registerHardware";
-            this.registerHardware.Size = new System.Drawing.Size(254, 40);
+            this.registerHardware.Size = new System.Drawing.Size(277, 40);
             this.registerHardware.TabIndex = 3;
             this.registerHardware.Text = "REJESTRACJA SPRZĘTU";
             this.registerHardware.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             // 
             this.registerSoftware.Location = new System.Drawing.Point(3, 141);
             this.registerSoftware.Name = "registerSoftware";
-            this.registerSoftware.Size = new System.Drawing.Size(254, 40);
+            this.registerSoftware.Size = new System.Drawing.Size(277, 40);
             this.registerSoftware.TabIndex = 4;
             this.registerSoftware.Text = "REJESTRACJA OPROGRAMOWANIA";
             this.registerSoftware.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             // 
             this.freeHardware.Location = new System.Drawing.Point(3, 187);
             this.freeHardware.Name = "freeHardware";
-            this.freeHardware.Size = new System.Drawing.Size(254, 40);
+            this.freeHardware.Size = new System.Drawing.Size(277, 40);
             this.freeHardware.TabIndex = 7;
             this.freeHardware.Text = "WOLNY SPRZĘT";
             this.freeHardware.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             // 
             this.freeSoftware.Location = new System.Drawing.Point(3, 233);
             this.freeSoftware.Name = "freeSoftware";
-            this.freeSoftware.Size = new System.Drawing.Size(254, 40);
+            this.freeSoftware.Size = new System.Drawing.Size(277, 40);
             this.freeSoftware.TabIndex = 8;
             this.freeSoftware.Text = "WOLNE OPROGRAMOWANIE";
             this.freeSoftware.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             // 
             this.logoutButton.Location = new System.Drawing.Point(3, 279);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(254, 40);
+            this.logoutButton.Size = new System.Drawing.Size(277, 40);
             this.logoutButton.TabIndex = 9;
             this.logoutButton.Text = "WYLOGUJ";
             this.logoutButton.UseVisualStyleBackColor = true;

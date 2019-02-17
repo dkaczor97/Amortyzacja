@@ -42,7 +42,9 @@ namespace Amortyzacja.Presenters
                     StreamReader streamReader=new StreamReader(stream);
                     while ((line=streamReader.ReadLine())!=null)
                     {
-                        
+                        string pesel = line;
+                        if (!_deleteWorkerModel.DeleteWorker(pesel))
+                            MessageBox.Show("PESEL NIE ZNAJDUJE SIĘ W BAZIE");
                     }
                 }
             }

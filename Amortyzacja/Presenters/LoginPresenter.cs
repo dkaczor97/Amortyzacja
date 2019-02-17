@@ -25,6 +25,21 @@ namespace Amortyzacja.Presenter
             _loginModel = new LoginModel();
         }
 
+        public void CheckWorkers()
+        {
+            _loginModel.CheckWorkers();
+        }
+
+        public void CheckSoftware()
+        {
+            _loginModel.CheckSoftware();
+        }
+
+        public void CheckAmortization()
+        {
+            _loginModel.CheckAmortization();
+        }
+
         public void LoginToApp(string login, string password)
         {
             //Account account=new Account(){UserLogin = login,UserPassword = password};

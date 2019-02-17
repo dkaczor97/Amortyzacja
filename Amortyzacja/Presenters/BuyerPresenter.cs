@@ -47,12 +47,12 @@ namespace Amortyzacja.Presenter
 
         public void FreeSoftware()
         {
-
+            Navigator.GetInstance().Navigate((Form)_buyerView,new FreeSoftwareForm());
         }
 
         public void FreeHardware()
         {
-
+            Navigator.GetInstance().Navigate((Form)_buyerView,new FreeHardwareForm());
         }
     }
 }
