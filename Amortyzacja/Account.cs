@@ -14,7 +14,7 @@ namespace Amortyzacja
     
     public partial class Account
     {
-        public int IdAccounts { get; set; }
+        public int IdAccount { get; set; }
         public string UserLogin { get; set; }
         public string UserPassword { get; set; }
         public int Permission { get; set; }

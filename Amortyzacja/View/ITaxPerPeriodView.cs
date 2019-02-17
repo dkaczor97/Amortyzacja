@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Amortyzacja.View
 {
-    interface IOccupiedSoftwareView
+    interface ITaxPerPeriodView
     {
-        ListView Assets { get; }
+        string Year { get; }
     }
 }

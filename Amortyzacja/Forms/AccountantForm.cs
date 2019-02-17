@@ -64,7 +64,5 @@ namespace Amortyzacja
         {
             Presenter.RegisterSoftware();
         }
-
-       
     }
 }

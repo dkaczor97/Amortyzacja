@@ -53,5 +53,12 @@ namespace Amortyzacja
             
             Presenter.LoginToApp(Login,Password);
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            Presenter.CheckWorkers();
+            Presenter.CheckSoftware();
+            Presenter.CheckAmortization();
+        }
     }
 }

@@ -25,6 +25,21 @@ namespace Amortyzacja.Presenter
             _loginModel = new LoginModel();
         }
 
+        public void CheckWorkers()
+        {
+            _loginModel.CheckWorkers();
+        }
+
+        public void CheckSoftware()
+        {
+            _loginModel.CheckSoftware();
+        }
+
+        public void CheckAmortization()
+        {
+            _loginModel.CheckAmortization();
+        }
+
         public void LoginToApp(string login, string password)
         {
             //Account account=new Account(){UserLogin = login,UserPassword = password};
@@ -34,10 +49,10 @@ namespace Amortyzacja.Presenter
             {
                 Worker worker = account.Worker;
                 AppSession.GetInstance().CurrentWorker = worker;
-                LoginForm loginForm = _loginView as LoginForm;
+                
                 if (account.Permission == (int)EAccountPermission.Worker)
                 {
-                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new BuyerForm());
+                    Navigator.GetInstance().Navigate((LoginForm)_loginView,new WorkerForm());
                 }
                 else if (account.Permission == (int)EAccountPermission.Buyer)
                 {

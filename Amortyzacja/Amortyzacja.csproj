@@ -113,6 +113,12 @@
     <Compile Include="Forms\BuyerForm.Designer.cs">
       <DependentUpon>BuyerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeleteAssetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteAssetsForm.Designer.cs">
+      <DependentUpon>DeleteAssetsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DeleteWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     <Compile Include="Forms\SoftwareAdditionForm.Designer.cs">
       <DependentUpon>SoftwareAdditionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TaxPerPeriodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaxPerPeriodForm.Designer.cs">
+      <DependentUpon>TaxPerPeriodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,10 +192,17 @@
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountantModel.cs" />
+    <Compile Include="Models\AddWorkerModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AmortizationModel.cs" />
+    <Compile Include="Models\DeleteAssetsModel.cs" />
+    <Compile Include="Models\DeleteWorkerModel.cs" />
+    <Compile Include="Models\FreeHardwareModel.cs" />
+    <Compile Include="Models\FreeSoftwareModel.cs" />
     <Compile Include="Models\HardwareAdditionModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\OccupiedHardwareModel.cs" />
+    <Compile Include="Models\OccupiedSoftwareModel.cs" />
     <Compile Include="Models\RegisterAssetsModel.cs" />
     <Compile Include="Models\SoftwareAdditionModel.cs" />
     <Compile Include="Navigaton\Navigator.cs" />
@@ -192,6 +211,8 @@
     <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\AmortizationPresenter.cs" />
     <Compile Include="Presenters\BuyerPresenter.cs" />
+    <Compile Include="Presenters\DeleteAssetsPresenter.cs" />
+    <Compile Include="Presenters\DeleteWorkerPresenter.cs" />
     <Compile Include="Presenters\FreeHardwarePresenter.cs" />
     <Compile Include="Presenters\FreeSoftwarePresenter.cs" />
     <Compile Include="Presenters\HardwareAdditionPresenter.cs" />
@@ -200,6 +221,7 @@
     <Compile Include="Presenters\OccupiedSoftwarePresenter.cs" />
     <Compile Include="Presenters\RegisterAssetsPresenter.cs" />
     <Compile Include="Presenters\SoftwareAdditionPresenter.cs" />
+    <Compile Include="Presenters\TaxPerPeriodPresenter.cs" />
     <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,6 +242,8 @@
     <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IAmortizationView.cs" />
     <Compile Include="View\IBuyerView.cs" />
+    <Compile Include="View\IDeleteAssetsView.cs" />
+    <Compile Include="View\IDeleteWorkerView.cs" />
     <Compile Include="View\IFreeHardwareView.cs" />
     <Compile Include="View\IFreeSoftwareView.cs" />
     <Compile Include="View\IHardwareAdditionView.cs" />
@@ -228,6 +252,7 @@
     <Compile Include="View\IOccupiedSoftwareView.cs" />
     <Compile Include="View\IRegisterAssetsView.cs" />
     <Compile Include="View\ISoftwareAdditionView.cs" />
+    <Compile Include="View\ITaxPerPeriodView.cs" />
     <Compile Include="View\IWorkerView.cs" />
     <Compile Include="Worker.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
@@ -246,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BuyerForm.resx">
       <DependentUpon>BuyerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteAssetsForm.resx">
+      <DependentUpon>DeleteAssetsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteWorkerForm.resx">
+      <DependentUpon>DeleteWorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FreeHardwareForm.resx">
       <DependentUpon>FreeHardwareForm.cs</DependentUpon>
@@ -270,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SoftwareAdditionForm.resx">
       <DependentUpon>SoftwareAdditionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaxPerPeriodForm.resx">
+      <DependentUpon>TaxPerPeriodForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkerForm.resx">
       <DependentUpon>WorkerForm.cs</DependentUpon>

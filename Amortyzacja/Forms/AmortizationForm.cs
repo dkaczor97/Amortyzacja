@@ -45,6 +45,7 @@ namespace Amortyzacja.Forms
         private void pass_Click(object sender, EventArgs e)
         {
             Presenter.Pass();
+            Presenter.FindHardware();
         }
 
 

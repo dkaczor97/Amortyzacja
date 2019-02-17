@@ -18,6 +18,8 @@ namespace Amortyzacja.Forms
         public OccupiedSoftwareForm()
         {
             InitializeComponent();
+            Assets = occupiedSoftware;
+            Presenter.OccupiedSoftware();
         }
 
         private OccupiedSoftwarePresenter Presenter
@@ -35,5 +37,7 @@ namespace Amortyzacja.Forms
         {
             Presenter.LastForm();
         }
+
+        public ListView Assets { get; private set; }
     }
 }

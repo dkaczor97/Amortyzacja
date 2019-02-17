@@ -61,12 +61,22 @@ namespace Amortyzacja.Forms
 
         private void freeHardware_Click(object sender, EventArgs e)
         {
-           
+            Presenter.FreeHardware();
         }
 
         private void freeSoftware_Click(object sender, EventArgs e)
         {
+            Presenter.FreeSoftware();
+        }
 
+        private void deleteSoftware_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteSoftware();
+        }
+
+        private void deleteHardware_Click(object sender, EventArgs e)
+        {
+            Presenter.DeleteHardware();
         }
 
         

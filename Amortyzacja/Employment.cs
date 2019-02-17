@@ -17,7 +17,7 @@ namespace Amortyzacja
         public int IdEmployment { get; set; }
         public System.DateTime StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
-        public int Workers_IdWorker { get; set; }
+        public Nullable<int> Workers_IdWorker { get; set; }
     
         public virtual Worker Worker { get; set; }
     }

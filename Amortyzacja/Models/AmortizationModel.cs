@@ -32,12 +32,13 @@ namespace Amortyzacja.Models
 
             Purchase purchase = tmpHardware.Purchase;
             double price = purchase.Price;
-            double amortization = price * 0.2 / 12.0;
+            double amortization = price * 0.2 / (12.0*year);
             string type = tmpHardware.Type;
-            DateTime endDate = DateTime.Now.AddYears(year);
+            DateTime endDate = DateTime.Now.Date.AddYears(year);
             Amortization tmpAmortization = new Amortization() { Type = type, AmortizationAmount = amortization, StartDate = DateTime.Now.Date,EndDate = endDate};
-            tmpHardware.Amortization = tmpAmortization;
             db.Amortizations.Add(tmpAmortization);
+            tmpHardware.Amortization = tmpAmortization;
+            
             db.SaveChanges();
         }
 

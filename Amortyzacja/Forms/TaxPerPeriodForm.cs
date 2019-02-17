@@ -12,24 +12,28 @@ using Amortyzacja.View;
 
 namespace Amortyzacja.Forms
 {
-    public partial class FreeHardwareForm : Form,IFreeHardwareView
+    public partial class TaxPerPeriodForm : Form,ITaxPerPeriodView
     {
-        private FreeHardwarePresenter _presenter = null;
-        public FreeHardwareForm()
+        private TaxPerPeriodPresenter _presenter = null;
+        public TaxPerPeriodForm()
         {
             InitializeComponent();
-            Assets = freeHardware;
-            Presenter.FreeHardware();
         }
 
-        private FreeHardwarePresenter Presenter
+        private TaxPerPeriodPresenter Presenter
         {
             get
             {
                 if(_presenter==null)
-                    _presenter=new FreeHardwarePresenter(this);
+                    _presenter=new TaxPerPeriodPresenter(this);
                 return _presenter;
             }
+        }
+
+        private void pass_Click(object sender, EventArgs e)
+        {
+            Year = year.Text;
+            Presenter.Pass();
         }
 
         private void lastForm_Click(object sender, EventArgs e)
@@ -37,6 +41,6 @@ namespace Amortyzacja.Forms
             Presenter.LastForm();
         }
 
-        public ListView Assets { get; private set; }
+        public string Year { get; private set; }
     }
 }

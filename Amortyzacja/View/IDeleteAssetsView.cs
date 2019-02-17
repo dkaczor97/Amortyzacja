@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using Amortyzacja.Enums;
 
 namespace Amortyzacja.View
 {
-    interface IOccupiedSoftwareView
+    interface IDeleteAssetsView
     {
-        ListView Assets { get; }
+        string SerialNumber { get; }
+        string Pesel { get; }
+
+        EAssets Assets { get; }
     }
 }
