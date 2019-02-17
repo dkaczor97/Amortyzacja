@@ -113,6 +113,12 @@
     <Compile Include="Forms\BuyerForm.Designer.cs">
       <DependentUpon>BuyerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeleteAssetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteAssetsForm.Designer.cs">
+      <DependentUpon>DeleteAssetsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DeleteWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,7 @@
     <Compile Include="Models\AddWorkerModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AmortizationModel.cs" />
+    <Compile Include="Models\DeleteAssetsModel.cs" />
     <Compile Include="Models\DeleteWorkerModel.cs" />
     <Compile Include="Models\FreeHardwareModel.cs" />
     <Compile Include="Models\FreeSoftwareModel.cs" />
@@ -198,6 +205,7 @@
     <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\AmortizationPresenter.cs" />
     <Compile Include="Presenters\BuyerPresenter.cs" />
+    <Compile Include="Presenters\DeleteAssetsPresenter.cs" />
     <Compile Include="Presenters\DeleteWorkerPresenter.cs" />
     <Compile Include="Presenters\FreeHardwarePresenter.cs" />
     <Compile Include="Presenters\FreeSoftwarePresenter.cs" />
@@ -227,6 +235,7 @@
     <Compile Include="View\IAdminView.cs" />
     <Compile Include="View\IAmortizationView.cs" />
     <Compile Include="View\IBuyerView.cs" />
+    <Compile Include="View\IDeleteAssetsView.cs" />
     <Compile Include="View\IDeleteWorkerView.cs" />
     <Compile Include="View\IFreeHardwareView.cs" />
     <Compile Include="View\IFreeSoftwareView.cs" />
@@ -254,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BuyerForm.resx">
       <DependentUpon>BuyerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteAssetsForm.resx">
+      <DependentUpon>DeleteAssetsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteWorkerForm.resx">
       <DependentUpon>DeleteWorkerForm.cs</DependentUpon>

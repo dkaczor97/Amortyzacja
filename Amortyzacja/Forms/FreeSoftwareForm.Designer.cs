@@ -53,9 +53,9 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.freeSoftware.Location = new System.Drawing.Point(161, 12);
+            this.freeSoftware.Location = new System.Drawing.Point(0, -2);
             this.freeSoftware.Name = "freeSoftware";
-            this.freeSoftware.Size = new System.Drawing.Size(520, 350);
+            this.freeSoftware.Size = new System.Drawing.Size(800, 350);
             this.freeSoftware.TabIndex = 1;
             this.freeSoftware.UseCompatibleStateImageBehavior = false;
             this.freeSoftware.View = System.Windows.Forms.View.Details;

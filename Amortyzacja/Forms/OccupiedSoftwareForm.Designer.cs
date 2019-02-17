@@ -53,9 +53,9 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.occupiedSoftware.Location = new System.Drawing.Point(158, 12);
+            this.occupiedSoftware.Location = new System.Drawing.Point(-2, 0);
             this.occupiedSoftware.Name = "occupiedSoftware";
-            this.occupiedSoftware.Size = new System.Drawing.Size(520, 350);
+            this.occupiedSoftware.Size = new System.Drawing.Size(802, 350);
             this.occupiedSoftware.TabIndex = 1;
             this.occupiedSoftware.UseCompatibleStateImageBehavior = false;
             this.occupiedSoftware.View = System.Windows.Forms.View.Details;

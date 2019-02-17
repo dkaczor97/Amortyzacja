@@ -58,7 +58,7 @@
             // 
             this.serialNumber.Location = new System.Drawing.Point(310, 148);
             this.serialNumber.Name = "serialNumber";
-            this.serialNumber.Size = new System.Drawing.Size(171, 22);
+            this.serialNumber.Size = new System.Drawing.Size(170, 22);
             this.serialNumber.TabIndex = 2;
             // 
             // label1

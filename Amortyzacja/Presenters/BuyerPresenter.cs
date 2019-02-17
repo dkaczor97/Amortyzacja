@@ -54,5 +54,15 @@ namespace Amortyzacja.Presenter
         {
             Navigator.GetInstance().Navigate((Form)_buyerView,new FreeHardwareForm());
         }
+
+        public void DeleteSoftware()
+        {
+            Navigator.GetInstance().Navigate((Form)_buyerView,new DeleteAssetsForm(EAssets.Software));
+        }
+
+        public void DeleteHardware()
+        {
+            Navigator.GetInstance().Navigate((Form)_buyerView, new DeleteAssetsForm(EAssets.Hardware));
+        }
     }
 }
