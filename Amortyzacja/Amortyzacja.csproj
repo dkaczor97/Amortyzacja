@@ -167,6 +167,12 @@
     <Compile Include="Forms\SoftwareAdditionForm.Designer.cs">
       <DependentUpon>SoftwareAdditionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TaxPerPeriodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaxPerPeriodForm.Designer.cs">
+      <DependentUpon>TaxPerPeriodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,7 @@
     <Compile Include="Presenters\OccupiedSoftwarePresenter.cs" />
     <Compile Include="Presenters\RegisterAssetsPresenter.cs" />
     <Compile Include="Presenters\SoftwareAdditionPresenter.cs" />
+    <Compile Include="Presenters\TaxPerPeriodPresenter.cs" />
     <Compile Include="Presenters\WorkerPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -245,6 +252,7 @@
     <Compile Include="View\IOccupiedSoftwareView.cs" />
     <Compile Include="View\IRegisterAssetsView.cs" />
     <Compile Include="View\ISoftwareAdditionView.cs" />
+    <Compile Include="View\ITaxPerPeriodView.cs" />
     <Compile Include="View\IWorkerView.cs" />
     <Compile Include="Worker.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
@@ -293,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SoftwareAdditionForm.resx">
       <DependentUpon>SoftwareAdditionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaxPerPeriodForm.resx">
+      <DependentUpon>TaxPerPeriodForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkerForm.resx">
       <DependentUpon>WorkerForm.cs</DependentUpon>

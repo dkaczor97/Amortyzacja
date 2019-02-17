@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Amortyzacja.Enums;
 using Amortyzacja.Forms;
+using Amortyzacja.Models;
 using Amortyzacja.Navigaton;
 using Amortyzacja.View;
 
@@ -13,12 +14,13 @@ namespace Amortyzacja.Presenter
 {
     public class AdminPresenter
     {
-        private IAdminView _adminView;
-        DatabaseEntities db=new DatabaseEntities();
+        private IAdminView _adminView=null;
+        private AdminModel _adminModel=null;
 
         public AdminPresenter(IAdminView adminView)
         {
             _adminView = adminView;
+            _adminModel=new AdminModel();
         }
 
         public void FreeSoftware()
@@ -44,12 +46,12 @@ namespace Amortyzacja.Presenter
 
         public void TaxPerPeriod()
         { 
-
+            Navigator.GetInstance().Navigate((Form)_adminView,new TaxPerPeriodForm());
         }
 
         public void AssetsCosts()
         {
-
+            MessageBox.Show("KOSZT ZASOBÓW WYNOSI: " +_adminModel.AssetsCost());
         }
 
         public void RegisterSoftware()

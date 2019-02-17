@@ -81,9 +81,13 @@ namespace Amortyzacja.Models
         {
             foreach (Amortization amortization in db.Amortizations)
             {
-                Hardware hardware = db.Hardwares.FirstOrDefault((h => h.Amortizations_IdAmortization == amortization.IdAmortization));
-                hardware.Amortization = null;
-                db.Amortizations.Remove(amortization);
+                if (amortization.EndDate < DateTime.Now.Date)
+                {
+                    Hardware hardware = db.Hardwares.FirstOrDefault((h => h.Amortizations_IdAmortization == amortization.IdAmortization));
+                    hardware.Amortization = null;
+                    db.Amortizations.Remove(amortization);
+                }
+                
             }
 
             db.SaveChanges();
